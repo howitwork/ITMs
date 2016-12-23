@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="dege">
+
+
+    <link rel="stylesheet" href="./css/components/animate/animate.min.css">
+    <link rel="stylesheet" href="./css/components/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/components/select/bootstrap-select.css">
+    <link rel="stylesheet" href="./css/components/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/components/bootstrapValidator/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="wrapper wrapper-full-page">
+        <div class="full-page login-page">
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+                            <form class="form-horizontal" method="#" action="#">
+                                <div class="card" data-background="color" data-color="blue">
+                                    <div class="header">
+                                        <h3 class="title"></h3>
+                                    </div>
+                                    <div class="content text-right">
+                                      <div class="form-group">
+                                        <label class="col-md-3">项&nbsp;&nbsp;&nbsp;&nbsp;目</label>
+                                        <div class="col-md-8">
+                                          <select class="form-control selectpicker">
+                                            <option>请选择</option>
+                                            <option>...</option>
+                                            <option>...</option>
+                                            <option>...</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                        <div class="form-group">
+                                           <label class="col-md-3">用户名</label>
+                                           <div class="col-md-8">
+                                             <input type="email" placeholder="用户名" class="form-control input-no-border">
+                                           </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label class="col-md-3">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                                          <div class="col-md-8">
+                                              <input type="password" placeholder="密  码" class="form-control input-no-border">
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="footer text-center">
+                                        <button type="submit" class="btn btn-fill btn-wd ">登 录</button>
+                                        <div class="forgot">
+                                            <a href="#pablo"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer footer-transparent">
+                <div class="container">
+                    <div class="copyright">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>, made with <i class="fa fa-heart heart"></i> by <a href="#">Hisuntech</a>
+                    </div>
+                </div>
+            </footer>
+            <div class="full-page-background" style="background-image: url(images/background-2.jpg) "></div>
+        </div>
+    </div>
+
+    <!-- <script src="./js/components/jquery/jquery.min.js"></script>
+    <script src="./js/components/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/components/bootstrapValidator/bootstrapValidator.min.js"></script>
+    <script src="./js/components/bootstrapValidator/language/zh_CN.js"></script>
+    <script src="./js/components/select/bootstrap-select.min.js"></script> -->
+    <script src="./js/components/requirejs/require.js" id="scriptid"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript" >
+    // require.config({
+    //     baseUrl: './',
+    //     paths: {
+    //         jquery: 'js/components/jquery/jquery.min',
+    //         bootstrap: 'js/components/bootstrap/bootstrap.min',
+    //         bootstrapValidator: 'js/components/bootstrapValidator/language/zh_CN',
+    //         bootstrapValidatorZh: 'js/components/bootstrapValidator/language/zh_CN',
+    //         select: 'js/components/select/bootstrap-select.min'
+    //     }
+    // })
+      require(['js/itm'],function (obj) {
+        obj.b();
+        console.log(obj.a);
+      });
+
+    </script>
+
+</body>
+
+</html>
