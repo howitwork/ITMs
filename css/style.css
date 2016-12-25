@@ -691,49 +691,6 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
     bottom: 0;
 }
 
-.footer {
-    background-attachment: fixed;
-    position: relative;
-    line-height: 20px;
-}
-
-.footer nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-}
-
-.footer nav ul li {
-    display: inline-block;
-    padding: 15px 15px 0;
-    margin: 3px 3px;
-    line-height: 20px;
-    text-align: center;
-}
-
-.footer nav ul a:not(.btn) {
-    color: #66615b;
-    display: block;
-}
-
-.footer .copyright {
-    color: #66615b;
-    padding: 15px 15px 0;
-    font-size: 14px;
-    margin: 3px 3px;
-    line-height: 20px;
-    text-align: center;
-}
-
-.footer .copyright a {
-    color: #68B3C8;
-}
-
-.footer .heart {
-    color: rgb(255, 91, 91);
-}
-
 .popover-content {
     background-color: #f4f3ef;
     padding: 9px 15px;
