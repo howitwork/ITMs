@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./css/components/table/bootstrap-table.min.css">
     <link rel="stylesheet" href="./css/components/themifyIcons/themify-icons.css">
     <link rel="stylesheet" href="./css/components/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/components/editableSelect/jquery-editable-select.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/customer.css">
     <link rel="stylesheet" href="./css/caseManagement.css">
@@ -68,7 +69,7 @@
                         </a>
                         <div class="collapse" id="caseManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="case">案例管理</a></li>
+                              <li><a href="#" data-menu-id="case">案例管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -86,7 +87,7 @@
                         <form class="navbar-form navbar-left navbar-search-form" role="search">
                             <div class="input-group">
                                 <span class="input-group-addon"><strong><i class="fa fa-search"></i></strong></span>
-                                <input type="text" value="" class="form-control" placeholder="Search...">
+                                <input type="text" name="search" value="" class="form-control" placeholder="Search...">
                             </div>
                         </form>
                         <ul class="nav navbar-nav navbar-right">
@@ -243,12 +244,13 @@
     <script src="./js/components/wizard/jquery.bootstrap.wizard.min.js"></script>
     <script src="./js/components/switch/bootstrap-switch.min.js"></script>
     <script src="./js/components/iCheck/icheck.min.js"></script>
-    <script src="./js/caseManagement.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
+    <script src="./js/app/caseManagement.js"></script>
+    <script src="./js/app/main.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
         $().ready(function() {
-            branch.init();
+            branch.init();            
             if ($.cookie('themeColor') != '' && typeof($.cookie('themeColor')) != 'undefined') {
                 console.log('aaa');
                 $('#themes').attr('href', './css/themes/' + $.cookie('themeColor') + '.css');
@@ -287,7 +289,7 @@
                 '<a class="add text-info" href="javascript:void(0)" title="add">',
                 '<i class="ti-plus"></i>',
                 '</a>',
-                '<a class="remove1 ml10 text-danger" href="javascript:void(0)" title="Remove">',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" title="Remove">',
                 '<i class="ti-trash"></i>',
                 '</a>'
             ].join('');

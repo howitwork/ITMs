@@ -1,32 +1,32 @@
 <div id="case" class="tab-pane" role="tabpanel">
     <div class="headSearch padding">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" action="" id="form-case" role="form">
             <div class="row">
                 <div class="col-xs-4">
                     <div class="form-group">
-                        <label class="col-md-5" for="customerType">案例编号：</label>
+                        <label class="col-md-5">案例编号：</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" placeholder="案例编号搜索...">
+                            <input type="text" name="caseNo" class="form-control" placeholder="案例编号搜索...">
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="form-group">
-                        <label class="col-md-5" for="customerType">阶段：</label>
+                        <label class="col-md-5">阶段：</label>
                         <div class="col-md-7">
-                            <select name="documentType1" class="selectpicker form-control">
-                  <option>所有</option>
-                  <option>IIT - System Integration</option>
-                  <option>test</option>
-                </select>
+                            <select name="phase" class="editable-select form-control">
+                              <option>所有</option>
+                              <option>IIT - System Integration</option>
+                              <option>test</option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="form-group">
-                        <label class="col-md-5" for="customerType">案例负责人：</label>
+                        <label class="col-md-5">案例负责人：</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" placeholder="案例负责人搜索...">
+                            <input type="text" name="head" class="form-control" placeholder="案例负责人搜索...">
                         </div>
                     </div>
                 </div>
@@ -34,63 +34,63 @@
             <div class="row">
                 <div class="col-xs-4">
                     <div class="form-group">
-                        <label class="col-md-5" for="customerType">需求编号：</label>
+                        <label class="col-md-5">需求编号：</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" placeholder="案例编号搜索...">
+                            <input type="text" name="demandNo" class="form-control" placeholder="案例编号搜索...">
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="form-group">
-                        <label class="col-md-5" for="customerType">状态：</label>
+                        <label class="col-md-5">状态：</label>
                         <div class="col-md-7">
-                            <select name="documentType1" class="selectpicker form-control">
-                  <option>所有</option>
-                  <option>new - 未执行</option>
-                  <option>passed - 通过</option>
-                  <option>unpassed - 不通过</option>
-                  <option>blocked - 阻挡</option>
-                </select>
+                            <select name="state" class="editable-select form-control">
+                              <option>所有</option>
+                              <option>new - 未执行</option>
+                              <option>passed - 通过</option>
+                              <option>unpassed - 不通过</option>
+                              <option>blocked - 阻挡</option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="form-group">
-                        <label class="col-md-5" for="customerType">测试人：</label>
+                        <label class="col-md-5">测试人：</label>
                         <div class="col-md-7">
-                            <input type="text" class="form-control" placeholder="测试人搜索...">
+                            <input type="text" name="testOne" class="form-control" placeholder="测试人搜索...">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div id="toolbar4">
-                    <select class="form-control selectpicker">
-                <option value="">Export Basic</option>
-                <option value="all">Export All</option>
-                <option value="selected">Export Selected</option>
-              </select>
-                </div>
-                <table class="text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#toolbar4" data-show-export="true"
-                    data-striped="true" data-click-to-select="true" data-single-select="true">
-                    <thead>
-                        <tr>
-                            <th data-field="state" data-checkbox="true"></th>
-                            <th data-field="contactNumber" data-sortable="true">案例编号</th>
-                            <th data-field="contactNumber" data-sortable="true">需求编号</th>
-                            <th data-field="transactionStatus" data-sortable="true">负责人</th>
-                            <th data-field="contactEn" data-editable="true" data-sortable="true">测试人</th>
-                            <th data-field="contactCn" data-editable="true" data-sortable="true">功能描述</th>
-                            <th data-field="contactPw" data-editable="true" data-sortable="true">应用</th>
-                            <th data-field="contactPw" data-editable="true" data-sortable="true">完成率</th>
-                            <th data-field="contactPw" data-editable="true" data-sortable="true">状态</th>
-                            <th data-field="contactPw" data-editable="true" data-sortable="true">阶段</th>
-                            <th data-field="contactPw" data-editable="true" data-sortable="true">计划执行日期</th>
-                            <th data-field="operation" data-sortable="true" data-events="operateEvents1" data-formatter="operateFormatter1">操作</th>
-                        </tr>
-                    </thead>
-                </table>
             </div>
         </form>
+        <div class="row">
+            <div id="toolbar4">
+                <select class="form-control selectpicker">
+            <option value="">Export Basic</option>
+            <option value="all">Export All</option>
+            <option value="selected">Export Selected</option>
+          </select>
+            </div>
+            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#toolbar4" data-show-export="true"
+                data-striped="true" data-click-to-select="true" data-single-select="true">
+                <thead>
+                    <tr>
+                        <!-- <th data-field="state" data-checkbox="true"></th> -->
+                        <th data-field="caseNo" data-sortable="true">案例编号</th>
+                        <th data-field="demandNo" data-sortable="true">需求编号</th>
+                        <th data-field="head" data-sortable="true">负责人</th>
+                        <th data-field="testOne" data-editable="true" data-sortable="true">测试人</th>
+                        <th data-field="funDescription" data-editable="true" data-sortable="true">功能描述</th>
+                        <th data-field="application" data-editable="true" data-sortable="true">应用</th>
+                        <th data-field="completion" data-editable="true" data-sortable="true">完成率</th>
+                        <th data-field="state" data-editable="true" data-sortable="true">状态</th>
+                        <th data-field="phase" data-editable="true" data-sortable="true">阶段</th>
+                        <th data-field="executionDate" data-editable="true" data-sortable="true">计划执行日期</th>
+                        <th data-field="operation" data-sortable="true" data-events="operateEvents1" data-formatter="operateFormatter1">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>

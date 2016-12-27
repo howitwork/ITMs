@@ -838,8 +838,9 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
     background-color: transparent;
 }
 
-
-/*客户信息修改*/
+.es-list {
+  text-align: left;
+}
 
 
 @media (min-width: 992px) {}

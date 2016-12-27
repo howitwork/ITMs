@@ -10,6 +10,7 @@ var branch = {
       this.initDatetimepicker();
       this.initValidator();
       this.initBootstrapTable();
+      this.initBootstapSelect();
     },
 /**组件的初始化 start *************************/
     //下拉菜单
@@ -62,10 +63,13 @@ var branch = {
       $('#contactTable').bootstrapTable('resetView');
     },
     /*
-     * bootstrap-select初始化
+     * select初始化
      */
     initBootstapSelect : function(){
       $('.selectpicker').selectpicker('refresh');
+      $('.editable-select').editableSelect({
+        effects: 'fade'
+      });
     },
 /**组件的初始化 end ****************************/
 

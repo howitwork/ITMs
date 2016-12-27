@@ -1,11 +1,11 @@
 <div class="addCaseManagement padding">
-    <form class="form-horizontal text-right" role="form">
+    <form class="form-horizontal text-right" action="" id="form-addCase" role="form">
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">所属应用：</label>
+            <label class="col-md-5">所属应用：</label>
             <div class="col-md-7">
-              <select name="documentType1" class="selectpicker form-control">
+              <select name="application" class="selectpicker form-control">
                 <option>请选择</option>
                 <option>PMO - 项目管理办公室</option>
                 <option>BP - 业务平台</option>
@@ -22,7 +22,7 @@
           <div class="form-group">
             <label class="col-md-5" for="customerType">案例编号：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="必填且不可重复">
+              <input type="text" name="caseNo" class="form-control" placeholder="必填且不可重复">
             </div>
           </div>
         </div>
@@ -30,9 +30,9 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">阶段：</label>
+            <label class="col-md-5">阶段：</label>
             <div class="col-md-7">
-              <select name="documentType1" class="selectpicker form-control">
+              <select name="phase" class="selectpicker form-control">
                 <option>请选择</option>
                 <option>IIT - System Integration Test</option>
                 <option>test</option>
@@ -42,9 +42,9 @@
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">需求/缺陷编号：</label>
+            <label class="col-md-5">需求/缺陷编号：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="案例编号搜索...">
+              <input type="text" name="demand" class="form-control" placeholder="案例编号搜索...">
             </div>
           </div>
         </div>
@@ -52,17 +52,17 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">案例编写人：</label>
+            <label class="col-md-5">案例编写人：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="必填">
+              <input type="text" name="caseWritten:" class="form-control" placeholder="必填">
             </div>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">案例执行人：</label>
+            <label class="col-md-5">案例执行人：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="必填">
+              <input type="text" name="caseExecution:" class="form-control" placeholder="必填">
             </div>
           </div>
         </div>
@@ -70,10 +70,10 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">计划执行日期：</label>
+            <label class="col-md-5">计划执行日期：</label>
             <div class="col-md-7">
               <div class='input-group date datepicker'>
-                  <input type='text' class="form-control" />
+                  <input type='text' name="planDate" class="form-control" />
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -83,9 +83,9 @@
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">需求变更号：</label>
+            <label class="col-md-5">需求变更号：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" name="requirementsChange," class="form-control" placeholder="">
             </div>
           </div>
         </div>
@@ -93,9 +93,9 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">交易类型：</label>
+            <label class="col-md-5">交易类型：</label>
             <div class="col-md-7">
-              <select name="documentType1" class="selectpicker form-control">
+              <select name="transactionType" class="selectpicker form-control">
                 <option>请选择</option>
                 <option>联机交易</option>
                 <option>批量</option>
@@ -108,7 +108,7 @@
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">交易码：</label>
+            <label class="col-md-5">交易码：</label>
             <div class="col-md-7">
               <input type="text" class="form-control" placeholder="">
             </div>
@@ -118,9 +118,9 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">案例类型：</label>
+            <label class="col-md-5">案例类型：</label>
             <div class="col-md-7">
-              <select name="documentType1" class="selectpicker form-control">
+              <select name="caseType" class="selectpicker form-control">
                 <option>请选择</option>
                 <option>正例</option>
                 <option>异常</option>
@@ -131,9 +131,9 @@
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">测试目的：</label>
+            <label class="col-md-5">测试目的：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" name="purposes" class="form-control" placeholder="">
             </div>
           </div>
         </div>
@@ -141,9 +141,9 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">案例类型：</label>
+            <label class="col-md-5">测试轮次：</label>
             <div class="col-md-7">
-              <select name="documentType1" class="selectpicker form-control">
+              <select name="testRounds" class="selectpicker form-control">
                 <option>请选择</option>
                 <option>第一轮</option>
                 <option>第二轮</option>
@@ -156,9 +156,9 @@
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">测试周期：</label>
+            <label class="col-md-5">测试周期：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" name="testCycle" class="form-control" placeholder="">
             </div>
           </div>
         </div>
@@ -166,9 +166,9 @@
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">状态：</label>
+            <label class="col-md-5">状态：</label>
             <div class="col-md-7">
-              <select name="documentType1" class="selectpicker form-control">
+              <select name="state" class="selectpicker form-control">
                 <option>请选择</option>
                 <option>未执行</option>
                 <option>通过</option>
@@ -179,9 +179,9 @@
         </div>
         <div class="col-xs-6">
           <div class="form-group">
-            <label class="col-md-5" for="customerType">测试环境：</label>
+            <label class="col-md-5">测试环境：</label>
             <div class="col-md-7">
-              <input type="text" class="form-control" placeholder="必填且不可重复">
+              <input type="text" class="form-control" name="testEnvironment" placeholder="必填且不可重复">
             </div>
           </div>
         </div>
@@ -189,9 +189,9 @@
       <div class="row">
         <div class="col-xs-10">
           <div class="form-group">
-            <label class="col-md-3" for="customerType">测试环境：</label>
+            <label class="col-md-3">案例描述:</label>
             <div class="col-md-9">
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" name="caseDescription" rows="3"></textarea>
             </div>
           </div>
         </div>
@@ -199,9 +199,9 @@
       <div class="row">
         <div class="col-xs-10">
           <div class="form-group">
-            <label class="col-md-3" for="customerType">备注：</label>
+            <label class="col-md-3">备注：</label>
             <div class="col-md-9">
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" name="note" rows="3"></textarea>
             </div>
           </div>
         </div>
