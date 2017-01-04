@@ -39,10 +39,6 @@ var branch = {
       var subjects = ['PHP', 'MySQL', 'SQL', 'PostgreSQL', 'HTML', 'CSS', 'HTML5', 'CSS3', 'JSON'];
       $('#search').typeahead({source: subjects});
       $(document).on('keyup',function(e){
-
-            console.log(e.which);
-            console.log($('.navbar .navbar-form .input-group .form-control').val());
-            console.log('aaa');
           });
     },
     /*
