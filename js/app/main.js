@@ -11,6 +11,7 @@ var branch = {
       this.initValidator();
       this.initBootstrapTable();
       this.initSelect();
+      this.initTypeahead();
     },
 /**组件的初始化 start *************************/
     //下拉菜单
@@ -32,6 +33,17 @@ var branch = {
           $('.sidebar .sidebar-wrapper').perfectScrollbar();
           $('.main.tab-content').perfectScrollbar();
       }
+    },
+    //typeahead初始化
+    initTypeahead : function(){
+      var subjects = ['PHP', 'MySQL', 'SQL', 'PostgreSQL', 'HTML', 'CSS', 'HTML5', 'CSS3', 'JSON'];
+      $('#search').typeahead({source: subjects});
+      $(document).on('keyup',function(e){
+
+            console.log(e.which);
+            console.log($('.navbar .navbar-form .input-group .form-control').val());
+            console.log('aaa');
+          });
     },
     /*
      * sweet alert 2

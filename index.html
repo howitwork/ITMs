@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./css/customer.css">
     <link rel="stylesheet" href="./css/caseManagement.css">
     <link rel="stylesheet" href="./css/themes/theme.css">
+    <link rel="stylesheet" href="./css/app.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="./css/themes/azure.css" id="themes">
     <title>ITM</title>
@@ -61,6 +62,49 @@
                 </div>
                 <ul class="nav">
                     <li class="list">
+                        <a data-toggle="collapse" href="#systemManagement" aria-expanded="false" class="collapsed">
+                            <i class="ti-package"></i>
+                            <p> 系统管理
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="systemManagement" aria-expanded="false">
+                            <ul class="nav">
+                              <li><a href="#" data-menu-id="user">用户管理</a></li>
+                              <li><a href="#" data-menu-id="role">角色管理</a></li>
+                              <li><a href="#" data-menu-id="menu">菜单管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <a data-toggle="collapse" href="#projectManagement" aria-expanded="false" class="collapsed">
+                            <i class="ti-package"></i>
+                            <p> 项目管理
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="projectManagement" aria-expanded="false">
+                            <ul class="nav">
+                              <li><a href="#" data-menu-id="list">项目清单</a></li>
+                              <li><a href="#" data-menu-id="application">应用管理</a></li>
+                              <li><a href="#" data-menu-id="Stage">阶段管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <a data-toggle="collapse" href="#demandManagement" aria-expanded="false" class="collapsed">
+                            <i class="ti-package"></i>
+                            <p> 需求管理
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="demandManagement" aria-expanded="false">
+                            <ul class="nav">
+                              <li><a href="#" data-menu-id="demand">需求管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list">
                         <a data-toggle="collapse" href="#caseManagement" aria-expanded="false" class="collapsed">
                             <i class="ti-package"></i>
                             <p> 案例管理
@@ -70,6 +114,32 @@
                         <div class="collapse" id="caseManagement" aria-expanded="false">
                             <ul class="nav">
                               <li><a href="#" data-menu-id="case">案例管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <a data-toggle="collapse" href="#defectManagement" aria-expanded="false" class="collapsed">
+                            <i class="ti-package"></i>
+                            <p> 缺陷管理
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="defectManagement" aria-expanded="false">
+                            <ul class="nav">
+                              <li><a href="#" data-menu-id="defect">缺陷管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <a data-toggle="collapse" href="#updateManagement" aria-expanded="false" class="collapsed">
+                            <i class="ti-package"></i>
+                            <p> 更新管理
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse" id="updateManagement" aria-expanded="false">
+                            <ul class="nav">
+                              <li><a href="#" data-menu-id="update">更新管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -84,12 +154,12 @@
                         <button id="minimizeSidebar" data-color="" class="btn btn-fill btn-icon hasColor"><i class="ti-more-alt"></i></button>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <form class="navbar-form navbar-left navbar-search-form" role="search">
+                        <div class="navbar-form navbar-left navbar-search-form" role="search">
                             <div class="input-group">
                                 <span class="input-group-addon"><strong><i class="fa fa-search"></i></strong></span>
-                                <input type="text" name="search" value="" class="form-control" placeholder="Search...">
+                                <input id="search" type="text" name="search" value="" class="form-control" data-provide="typeahead" autocomplete="off" placeholder="Search...">
                             </div>
-                        </form>
+                        </div>
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown theme">
                                 <a href="#" class="dropdown-toggle btn-scale" data-toggle="dropdown">
@@ -153,11 +223,6 @@
                                     <i class="ti-bell"></i>
                                     <span class="badge">5</span>
                                     <div class="notification-ring red"></div>
-                                    <!-- <span class="notification">5</span> -->
-                                    <!-- <p class="hidden-md hidden-lg">
-                                        Notifications
-                                        <b class="caret"></b>
-                                    </p> -->
                                 </a>
                                 <ul class="dropdown-menu per">
                                     <li><a href="#not1">Notification 1</a></li>
@@ -167,28 +232,56 @@
                                     <li><a href="#another">Another notification</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#settings" class="btn-rotate">
+                            <!-- <li>
+                                <a href="" class="btn-rotate">
                                     <i class="ti-email"></i>
                                     <span class="badge blue">3</span>
                                     <div class="notification-ring blue"></div>
-                                    <!-- <p class="hidden-md hidden-lg">
-                                        Settings
-                                    </p> -->
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#settings" class="btn-rotate">
                                     <i class="ti-settings"></i>
-                                    <!-- <p class="hidden-md hidden-lg">
-                                        Settings
-                                    </p> -->
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#loginOut" class="btn-rotate btn-scale">
+                                    <i class="ti-power-off"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+            <div class="settings">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <ul class="nav nav-stacked nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">用户设置</a></li>
+                            <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">菜单设置</a></li>
+                            <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">消息设置</a></li>
+                            <li role="presentation"><a href="#settings" role="tab" data-toggle="tab">系统设置</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-10">
+                        <!-- Tab panes -->
+                        <div class="tab-content text-center">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <h1 class="page-header">用户设置</h1>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <h1 class="page-header">菜单设置</h1>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="messages">
+                                <h1 class="page-header">消息设置</h1>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="settings">
+                                <h1 class="page-header">系统设置</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -202,7 +295,10 @@
                                         </ul>
                                         <!-- Tab panes -->
                                         <div class="tab-content main">
-
+                                          <div id="error" class="tab-pane" role="tabpanel">
+                                            <h1>404</h1>
+                                            <span>对不起,该页面不存在</span>
+                                          </div>
                                         </div>
                                     </div>
                                 </div>
@@ -245,12 +341,14 @@
     <script src="./js/components/switch/bootstrap-switch.min.js"></script>
     <script src="./js/components/iCheck/icheck.min.js"></script>
     <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
+    <script src="./bower_components/bootstrap3-typeahead/bootstrap3-typeahead.min.js"></script>
     <script src="./js/app/caseManagement.js"></script>
+    <script src="./js/app/app.js"></script>
     <script src="./js/app/main.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
         $().ready(function() {
-            branch.init();            
+            branch.init();
             if ($.cookie('themeColor') != '' && typeof($.cookie('themeColor')) != 'undefined') {
                 console.log('aaa');
                 $('#themes').attr('href', './css/themes/' + $.cookie('themeColor') + '.css');
@@ -283,9 +381,40 @@
                 $('.sidebar.mini .nav li a').attr('data-toggle', '');
             }
         });
-
+        function operateFormatter3(value, row, index) {
+            return [
+                '<a class="add text-info" href="javascript:void(0)" title="add">',
+                '<i class="ti-plus"></i>',
+                '</a>',
+                '<a class="view text-info" href="javascript:void(0)" title="view">',
+                '<i class="ti-image"></i>',
+                '</a>',
+                '<a class="edit text-info" href="javascript:void(0)" title="edit">',
+                '<i class="ti-pencil-alt"></i>',
+                '</a>',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" title="Remove">',
+                '<i class="ti-trash"></i>',
+                '</a>'
+            ].join('');
+        }
+        function operateFormatter2(value, row, index) {
+            return [
+                '<a class="view text-info" href="javascript:void(0)" title="view">',
+                '<i class="ti-image"></i>',
+                '</a>',
+                '<a class="edit text-info" href="javascript:void(0)" title="edit">',
+                '<i class="ti-pencil-alt"></i>',
+                '</a>',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" title="Remove">',
+                '<i class="ti-trash"></i>',
+                '</a>'
+            ].join('');
+        }
         function operateFormatter1(value, row, index) {
             return [
+                '<a class="view text-info" href="javascript:void(0)" title="view">',
+                '<i class="ti-image"></i>',
+                '</a>',
                 '<a class="add text-info" href="javascript:void(0)" title="add">',
                 '<i class="ti-plus"></i>',
                 '</a>',

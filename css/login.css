@@ -25,6 +25,9 @@ body .wrapper {
 .login-page > .content, .lock-page > .content {
     padding-top: 20vh;
 }
+.error-page > .content {
+     padding-top: 35vh;
+}
 .full-page > .content {
     min-height: calc(100vh - 70px);
 }
@@ -38,7 +41,7 @@ body .wrapper {
     padding-left: 15px;
     padding-right: 15px;
 }
-.login-page .card, .lock-page .card {
+.login-page .card, .lock-page .card, .error-page .card {
     box-shadow: 0 25px 30px -13px rgba(40, 40, 40, 0.4);
     border-radius: 6px;
     padding-top: 25px;

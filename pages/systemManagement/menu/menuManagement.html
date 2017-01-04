@@ -1,0 +1,72 @@
+<div id="menu" class="tab-pane" role="tabpanel">
+    <div class="headSearch padding">
+        <form class="form-horizontal" action="" id="form-case" role="form">
+            <div class="row padding">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">菜单ID：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="menuId" id="menuId" class="form-control" placeholder="菜单ID搜索...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">菜单名称：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="menuName" id="menuName" class="form-control" placeholder="菜单名称搜索...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">父菜单ID：</label>
+                        <div class="col-md-7">
+                            <select name="parentMenuId" id="parentMenuId" class="editable-select form-control">
+                              <option>0 - root</option>
+                              <option>100 - 系统管理</option>
+                              <option>110 - 用户管理</option>
+                              <option>120 - 菜单管理</option>
+                              <option>130 - 角色管理</option>
+                              <option>400 - 案例管理</option>
+                              <option>......</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row padding">
+              <div class="col-xs-4 col-xs-offset-4">
+                <a href="#" class="button button-primary button-pill button-small">查 询</a>
+              </div>
+            </div>
+        </form>
+        <div class="row">
+            <div id="toolbar7">
+                <select class="form-control selectpicker">
+            <option value="">Export Basic</option>
+            <option value="all">Export All</option>
+            <option value="selected">Export Selected</option>
+          </select>
+            </div>
+            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#toolbar7" data-show-export="true"
+                data-striped="true" data-click-to-select="true" data-single-select="true">
+                <thead>
+                    <tr>
+                        <!-- <th data-field="state" data-checkbox="true"></th> -->
+                        <th data-field="caseNo" data-sortable="true">菜单ID</th>
+                        <th data-field="demandNo" data-sortable="true">菜单名称</th>
+                        <th data-field="head" data-sortable="true">菜单链接地址</th>
+                        <th data-field="testOne" data-editable="true" data-sortable="true">父菜单ID</th>
+                        <th data-field="funDescription" data-editable="true" data-sortable="true">菜单角色</th>
+                        <th data-field="application" data-editable="true" data-sortable="true">菜单顺序</th>
+                        <th data-field="completion" data-editable="true" data-sortable="true">菜单描述</th>
+                        <th data-field="state" data-editable="true" data-sortable="true">修改时间</th>
+                        <th data-field="operation" data-sortable="true" data-events="operateEvents4" data-formatter="operateFormatter3">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

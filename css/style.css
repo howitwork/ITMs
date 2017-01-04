@@ -841,8 +841,51 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
 .es-list {
   text-align: left;
 }
+.main-panel>.settings {
+  height: calc(100% - 75px);
+  border-top: 1px solid #ddd;
+  display: none;
+}
+.main-panel>.settings .row{
+  height: 100%;
+  margin-left: 0px;
+}
+.main-panel>.settings .row .col-xs-2 {
+  position: relative;
+  left: -2px;
+  height: 100%;
+  background-color: rgba(241, 241, 241, 0.5);
+  padding-right: 0px;
+  padding-left: 0px;
+  border-right: 1px solid #ddd;
+}
+.settings .nav-stacked.nav-tabs {
+  border: 0px none;
+}
+.main-panel>.settings .nav-tabs>li {
+  position: relative;
+  left: 1px;
+}
+.main-panel>.settings .nav-tabs>li.active {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: 0px none;
+}
+.settings .nav-stacked.nav-tabs li a {
+  padding-left: 30px;
+}
+.main-panel>.settings .nav-tabs>li.active:first-child {
+  border-top: 0px none;
+}
 
-
+.main.tab-content #error h1{
+  margin-top: 24%;
+  font-size: 95px;
+  color: #ff4351;
+}
+.main.tab-content #error span{
+  /*color: #ff4351;*/
+}
 @media (min-width: 992px) {}
 
 
