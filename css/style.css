@@ -252,35 +252,11 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
 .sidebar .sidebar-wrapper>.nav li>a:hover, .off-canvas-sidebar .sidebar-wrapper>.nav li>a:hover {
     opacity: 1;
     color: #fff;
-    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
-    animation: neon2 1.5s ease-in-out infinite alternate;
 }
 
 .sidebar .sidebar-wrapper>.nav li.active>a:hover, .off-canvas-sidebar .sidebar-wrapper>.nav li.active>a:hover {
     opacity: 1;
     color: rgb(255, 91, 91);
-    -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
-    -moz-animation: neon1 1.5s ease-in-out infinite alternate;
-    animation: neon1 1.5s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes neon1 {
-    from {
-        text-shadow: 0 0 1px rgb(255, 91, 91), 0 0 2px rgb(255, 91, 91);
-    }
-    to {
-        text-shadow: 0 0 2px rgb(255, 91, 91), 0 0 3px rgb(255, 91, 91);
-    }
-}
-
-@-webkit-keyframes neon2 {
-    from {
-        text-shadow: 0 0 1px #fff, 0 0 2px #fff;
-    }
-    to {
-        text-shadow: 0 0 2px #fff, 0 0 3px #fff;
-    }
 }
 
 .sidebar .sidebar-wrapper>.nav p, .off-canvas-sidebar .sidebar-wrapper>.nav p {
@@ -883,9 +859,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   font-size: 95px;
   color: #ff4351;
 }
-.main.tab-content #error span{
-  /*color: #ff4351;*/
-}
+
 @media (min-width: 992px) {}
 
 

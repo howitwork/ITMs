@@ -1,0 +1,54 @@
+<div id="stage1" class="tab-pane" role="tabpanel">
+    <div class="headSearch padding">
+        <form class="form-horizontal" action="" id="form-case" role="form">
+            <div class="row padding">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="col-md-5">阶段ID：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="stageId" id="stageId" class="form-control" placeholder="阶段ID搜索...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="col-md-5">阶段描述：</label>
+                        <div class="col-md-7">
+                          <input type="text" name="stageDescribe" id="stageDescribe" class="form-control" placeholder="阶段描述搜索...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row padding">
+              <div class="col-xs-4 col-xs-offset-4">
+                <a href="#" class="button button-primary button-pill button-small">查 询</a>
+              </div>
+            </div>
+        </form>
+        <div class="row">
+            <div id="stageToolbar">
+              <select class="selectpicker">
+                <option value="">Export Basic</option>
+                <option value="all">Export All</option>
+                <option value="selected">Export Selected</option>
+              </select>
+              <button type="button" class="btn btn-default stageAdd"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#stageToolbar" data-show-export="true"
+                data-striped="true" data-click-to-select="true" data-single-select="true">
+                <thead>
+                    <tr>
+                        <!-- <th data-field="state" data-checkbox="true"></th> -->
+                        <th data-field="caseNo" data-sortable="true">应用ID</th>
+                        <th data-field="demandNo" data-sortable="true">应用名称</th>
+                        <th data-field="head" data-sortable="true">项目ID</th>
+                        <th data-field="testOne" data-editable="true" data-sortable="true">创建日期</th>
+                        <th data-field="funDescription" data-editable="true" data-sortable="true">修改时间</th>
+                        <th data-field="operation" data-sortable="true" data-events="operateEventsStage" data-formatter="operateFormatter2">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>

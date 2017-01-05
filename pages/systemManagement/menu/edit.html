@@ -1,0 +1,82 @@
+<div class="addCaseManagement padding">
+    <form class="form-horizontal" action="" id="" role="form">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4" for="customerType">菜单ID：</label>
+            <div class="col-md-7">
+              <input type="text" name="menuId" id="menuId" class="form-control" placeholder="菜单ID必填...">
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4" for="customerType">菜单名称：</label>
+            <div class="col-md-7">
+              <input type="text" name="menuName" id="menuName" class="form-control" placeholder="菜单名称必填...">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">菜单链接地址：</label>
+            <div class="col-md-7">
+              <input type="text" name="menUrl" id="menUrl" class="form-control" placeholder="菜单链接地址称必填...">
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">菜单顺序：</label>
+            <div class="col-md-7">
+              <input type="text" name="userName" id="userName" class="form-control" placeholder="菜单顺序必填数字...">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">父菜单ID：</label>
+            <div class="col-md-7">
+              <select name="parentMenuId" id="parentMenuId" class="editable-select form-control">
+                <option>0 - root</option>
+                <option>100 - 系统管理</option>
+                <option>110 - 用户管理</option>
+                <option>120 - 菜单管理</option>
+                <option>130 - 角色管理</option>
+                <option>400 - 案例管理</option>
+                <option>......</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">菜单角色：</label>
+            <div class="col-md-7">
+              <select name="menuRole" id="menuRole" class="editable-select form-control">
+                <option>Programmer - 程序员</option>
+                <option>admin - 管理员</option>
+                <option>SA - 系统分析员</option>
+                <option>Team Leader - 组长</option>
+                <option>Manager - 项目经理</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="col-md-2">菜单描述：</label>
+            <div class="col-md-9">
+              <textarea class="form-control" name="note" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>

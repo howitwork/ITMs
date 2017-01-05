@@ -1,0 +1,115 @@
+<div id="demand" class="tab-pane" role="tabpanel">
+    <div class="headSearch padding">
+        <form class="form-horizontal" action="" id="form-case" role="form">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">需求编号：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="demandNo" id="demandNo" class="form-control" placeholder="需求编号搜索...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">应用ID：</label>
+                        <div class="col-md-7">
+                            <select name="applicationId" id="applicationId" class="editable-select form-control">
+                              <option>PMO- 项目管理办公室</option>
+                              <option>BP- 业务平台</option>
+                              <option>CI- 客户</option>
+                              <option>CL- 额度</option>
+                              <option>FACTA- FACTA</option>
+                              <option>ECIF- ECIF</option>
+                              <option>RP- 报表</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">状态：</label>
+                        <div class="col-md-7">
+                          <select name="state" class="editable-select form-control">
+                            <option>new - 新状态</option>
+                            <option>accepted - 已接受</option>
+                            <option>developed - 已开发</option>
+                            <option>rejected - 已拒绝</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">需求负责人：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="demandHead" id="demandHead" class="form-control" placeholder="需求负责人搜索...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">需求阶段：</label>
+                        <div class="col-md-7">
+                            <select name="demandPhase" id="demandPhase" class="editable-select form-control">
+                              <option>所有</option>
+                              <option>IT - System Integration Test</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label class="col-md-5">优先级：</label>
+                        <div class="col-md-7">
+                          <select name="priority" id="priority" class="editable-select form-control">
+                            <option>所有</option>
+                            <option>high - 高</option>
+                            <option>middle - 中</option>
+                            <option>low - 低</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row padding">
+              <div class="col-xs-4 col-xs-offset-4">
+                <a href="#" class="button button-primary button-pill button-small">查 询</a>
+              </div>
+            </div>
+        </form>
+        <div class="row">
+            <div id="demandToolbar">
+              <select class="selectpicker">
+                <option value="">Export Basic</option>
+                <option value="all">Export All</option>
+                <option value="selected">Export Selected</option>
+              </select>
+              <button type="button" class="btn btn-default demandAdd"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+            </div>
+            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#demandToolbar" data-show-export="true"
+                data-striped="true" data-click-to-select="true" data-single-select="true">
+                <thead>
+                    <tr>
+                        <!-- <th data-field="state" data-checkbox="true"></th> -->
+                        <th data-field="caseNo" data-sortable="true">需求编号</th>
+                        <th data-field="demandNo" data-sortable="true">需求描述</th>
+                        <th data-field="head" data-sortable="true">优先级</th>
+                        <th data-field="testOne" data-editable="true" data-sortable="true">状态</th>
+                        <th data-field="funDescription" data-editable="true" data-sortable="true">阶段</th>
+                        <th data-field="application" data-editable="true" data-sortable="true">应用</th>
+                        <th data-field="completion" data-editable="true" data-sortable="true">需求负责人</th>
+                        <th data-field="state" data-editable="true" data-sortable="true">当前跟进人</th>
+                        <th data-field="phase" data-editable="true" data-sortable="true">计划开始日期</th>
+                        <th data-field="executionDate" data-editable="true" data-sortable="true">计划完成日期</th>
+                        <th data-field="operation" data-sortable="true" data-events="operateEventsDemand" data-formatter="operateFormatter2">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
