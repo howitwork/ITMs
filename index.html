@@ -51,7 +51,7 @@
                             Li Shaoying
                             <b class="caret"></b>
                         </a>
-                        <div class="collapse" id="collapseExample" aria-expanded="false" style="height: 0px;">
+                        <div class="collapse photo" id="collapseExample" aria-expanded="false" style="height: 0px;">
                             <ul class="nav">
                                 <li><a href="#profile">My Profile</a></li>
                                 <li><a href="#editprofile">Edit Profile</a></li>
@@ -70,9 +70,9 @@
                         </a>
                         <div class="collapse" id="systemManagement" aria-expanded="false">
                             <ul class="nav">
-                              <li><a href="#" data-menu-id="user">用户管理</a></li>
-                              <li><a href="#" data-menu-id="role">角色管理</a></li>
-                              <li><a href="#" data-menu-id="menu">菜单管理</a></li>
+                                <li><a href="#" data-menu-id="user">用户管理</a></li>
+                                <li><a href="#" data-menu-id="role">角色管理</a></li>
+                                <li><a href="#" data-menu-id="menu">菜单管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -85,9 +85,9 @@
                         </a>
                         <div class="collapse" id="projectManagement" aria-expanded="false">
                             <ul class="nav">
-                              <li><a href="#" data-menu-id="list">项目清单</a></li>
-                              <li><a href="#" data-menu-id="application">应用管理</a></li>
-                              <li><a href="#" data-menu-id="stage1">阶段管理</a></li>
+                                <li><a href="#" data-menu-id="list">项目清单</a></li>
+                                <li><a href="#" data-menu-id="application">应用管理</a></li>
+                                <li><a href="#" data-menu-id="stage1">阶段管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -100,7 +100,7 @@
                         </a>
                         <div class="collapse" id="demandManagement" aria-expanded="false">
                             <ul class="nav">
-                              <li><a href="#" data-menu-id="demand">需求管理</a></li>
+                                <li><a href="#" data-menu-id="demand">需求管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -113,7 +113,7 @@
                         </a>
                         <div class="collapse" id="caseManagement" aria-expanded="false">
                             <ul class="nav">
-                              <li><a href="#" data-menu-id="case">案例管理</a></li>
+                                <li><a href="#" data-menu-id="case">案例管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -126,7 +126,7 @@
                         </a>
                         <div class="collapse" id="defectManagement" aria-expanded="false">
                             <ul class="nav">
-                              <li><a href="#" data-menu-id="defect">缺陷管理</a></li>
+                                <li><a href="#" data-menu-id="defect">缺陷管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -139,7 +139,7 @@
                         </a>
                         <div class="collapse" id="updateManagement" aria-expanded="false">
                             <ul class="nav">
-                              <li><a href="#" data-menu-id="update">更新管理</a></li>
+                                <li><a href="#" data-menu-id="update">更新管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -154,10 +154,10 @@
                         <button id="minimizeSidebar" data-color="" class="btn btn-fill btn-icon hasColor"><i class="ti-more-alt"></i></button>
                     </div>
                     <div class="collapse navbar-collapse">
-                        <div class="navbar-form navbar-left navbar-search-form" role="search">
+                        <div class="navbar-form navbar-left navbar-search-form">
                             <div class="input-group">
                                 <span class="input-group-addon"><strong><i class="fa fa-search"></i></strong></span>
-                                <input id="search" type="text" name="search" value="" class="form-control" data-provide="typeahead" autocomplete="off" placeholder="Search...">
+                                <input id="search" type="text" value="" class="form-control" autocomplete="off" data-provide="typeahead" placeholder="Search...">
                             </div>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
@@ -295,10 +295,10 @@
                                         </ul>
                                         <!-- Tab panes -->
                                         <div class="tab-content main">
-                                          <div id="error" class="tab-pane" role="tabpanel">
-                                            <h1>404</h1>
-                                            <span>对不起,该页面不存在</span>
-                                          </div>
+                                            <div id="error" class="tab-pane" role="tabpanel">
+                                                <h1>404</h1>
+                                                <span>对不起,该页面不存在</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -342,7 +342,7 @@
     <script src="./js/components/iCheck/icheck.min.js"></script>
     <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
     <script src="./bower_components/bootstrap3-typeahead/bootstrap3-typeahead.min.js"></script>
-    <script src="./js/app/caseManagement.js"></script>
+    <!-- <script src="./js/app/caseManagement.js"></script> -->
     <script src="./js/app/app.js"></script>
     <script src="./js/app/main.js"></script>
     <!-- endbuild -->
@@ -381,6 +381,7 @@
                 $('.sidebar.mini .nav li a').attr('data-toggle', '');
             }
         });
+
         function operateFormatter3(value, row, index) {
             return [
                 '<a class="add text-info" href="javascript:void(0)" title="add">',
@@ -397,6 +398,7 @@
                 '</a>'
             ].join('');
         }
+
         function operateFormatter2(value, row, index) {
             return [
                 '<a class="view text-info" href="javascript:void(0)" title="view">',
@@ -410,6 +412,7 @@
                 '</a>'
             ].join('');
         }
+
         function operateFormatter1(value, row, index) {
             return [
                 '<a class="view text-info" href="javascript:void(0)" title="view">',

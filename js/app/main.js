@@ -36,10 +36,31 @@ var branch = {
     },
     //typeahead初始化
     initTypeahead : function(){
-      var subjects = ['PHP', 'MySQL', 'SQL', 'PostgreSQL', 'HTML', 'CSS', 'HTML5', 'CSS3', 'JSON'];
-      $('#search').typeahead({source: subjects});
-      $(document).on('keyup',function(e){
-          });
+        var subjects = [];
+        $('.sidebar .sidebar-wrapper>.nav>li .nav li a').each(function(){
+          subjects.push($(this).text());
+        });
+        $('#search').typeahead({source: subjects});
+        //回车打开搜索内容
+        $('#search').on('keyup',function(e){
+          var _this = this;
+          if (e.which == 13) {
+            $('.sidebar .sidebar-wrapper>.nav>li .nav li a').each(function(){
+              if ($(this).text() == $(_this).val()) {
+                $(this).trigger('click');
+              }
+            });
+          }
+        });
+        //点击打开搜索内容
+        $('.navbar .navbar-form .input-group').on('click','.typeahead li a',function(){
+          var _this = this;
+          $('.sidebar .sidebar-wrapper>.nav>li .nav li a').each(function(){
+            if ($(this).text() == $(_this).text()) {
+              $(this).trigger('click');
+            }
+        });
+      });
     },
     /*
      * sweet alert 2
@@ -245,19 +266,17 @@ var branch = {
 
             });
             $('.wrapper').on('mouseenter', '.sidebar.mini .sidebar-wrapper>.nav>li.list', function() {
-                $('.sidebar.mini .collapse').eq($(this).index()).css('display', 'block');
+                console.log($(this).index());
+                $('.sidebar.mini .collapse:not(.photo)').eq($(this).index()).css('display', 'block');
                 $(this).addClass('triangle');
                 $('.sidebar.mini .sidebar-wrapper>.nav li>a').click(function() {
                     event.preventDefault();
                     // event.stopPropagation();
                 });
             }).on('mouseleave', '.sidebar.mini .sidebar-wrapper>.nav>li', function() {
-                $('.sidebar.mini .collapse').eq($(this).index()).css('display', 'none');
+                $('.sidebar.mini .collapse:not(.photo)').eq($(this).index()).css('display', 'none');
                 $('.sidebar.mini .sidebar-wrapper>.nav>li').removeClass('triangle');
             });
-
-
-
             /*
              * 点击切换tab页
              */

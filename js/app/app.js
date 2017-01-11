@@ -37,6 +37,111 @@ $(function() {
     app.getManagementPage('pages/projectManagement/application/application.html');
     app.getManagementPage('pages/projectManagement/stage/stage.html');
     app.getManagementPage('pages/demandManagement/demand.html');
+    app.getManagementPage('pages/caseManagement/case.html');
+    app.getManagementPage('pages/defectManagement/defect.html');
+    app.getManagementPage('pages/updateManagement/update.html');
+    //更新管理
+    $(document).on('click','#updateToolbar .updateAdd',function(){
+      app.getOperationPage(
+          'pages/updateManagement/edit.html',
+          '新增更新',
+          '65%',
+          'false'
+      )
+    });
+    window.operateEventsUpdate = {
+        'click .view': function(e, value, row, index) {
+            app.getOperationPage(
+                'pages/updateManagement/view.html',
+                '查看更新',
+                '60%',
+                'false'
+            )
+        },
+        'click .edit': function(e, value, row, index) {
+            app.getOperationPage(
+                'pages/updateManagement/edit.html',
+                '编辑更新',
+                '65%',
+                'true'
+            )
+        },
+        'click .remove': function(e, value, row, index) {
+            $('#contactTable').bootstrapTable('remove', {
+                field: 'caseNo',
+                values: [row.caseNo]
+            });
+            return false;
+        }
+    };
+    //缺陷管理
+    $(document).on('click','#defectToolbar .defectAdd',function(){
+      app.getOperationPage(
+          'pages/defectManagement/edit.html',
+          '新增缺陷',
+          '65%',
+          'false'
+      )
+    });
+    window.operateEventsDefect = {
+        'click .view': function(e, value, row, index) {
+            app.getOperationPage(
+                'pages/defectManagement/view.html',
+                '查看缺陷',
+                '60%',
+                'false'
+            )
+        },
+        'click .edit': function(e, value, row, index) {
+            app.getOperationPage(
+                'pages/defectManagement/edit.html',
+                '编辑缺陷',
+                '65%',
+                'true'
+            )
+        },
+        'click .remove': function(e, value, row, index) {
+            $('#contactTable').bootstrapTable('remove', {
+                field: 'caseNo',
+                values: [row.caseNo]
+            });
+            return false;
+        }
+    };
+    //案例管理
+    $(document).on('click','#caseToolbar .caseAdd',function(){
+      app.getOperationPage(
+          'pages/caseManagement/edit.html',
+          '新增需求',
+          '65%',
+          'false'
+      )
+    });
+    window.operateEventsCase = {
+        'click .view': function(e, value, row, index) {
+            app.getOperationPage(
+                'pages/caseManagement/view.html',
+                '查看需求',
+                '60%',
+                'false'
+            )
+        },
+        'click .edit': function(e, value, row, index) {
+            app.getOperationPage(
+                'pages/caseManagement/edit.html',
+                '编辑需求',
+                '65%',
+                'true'
+            )
+        },
+        'click .remove': function(e, value, row, index) {
+            $('#contactTable').bootstrapTable('remove', {
+                field: 'caseNo',
+                values: [row.caseNo]
+            });
+            return false;
+        }
+    };
     //需求管理
     $(document).on('click','#demandToolbar .demandAdd',function(){
       app.getOperationPage(
@@ -109,7 +214,7 @@ $(function() {
     $(document).on('click','#applicationToolbar .applicationAdd',function(){
       app.getOperationPage(
           'pages/projectManagement/application/edit.html',
-          '新增项目',
+          '新增应用',
           '43%',
           'false'
       )
@@ -118,7 +223,7 @@ $(function() {
         'click .view': function(e, value, row, index) {
             app.getOperationPage(
                 'pages/projectManagement/application/view.html',
-                '查看项目',
+                '查看应用',
                 '40%',
                 'false'
             )
@@ -126,7 +231,7 @@ $(function() {
         'click .edit': function(e, value, row, index) {
             app.getOperationPage(
                 'pages/projectManagement/application/edit.html',
-                '编辑项目',
+                '编辑应用',
                 '43%',
                 'true'
             )

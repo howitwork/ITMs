@@ -63,16 +63,24 @@
                     </div>
                 </div>
             </div>
+            <div class="divider"></div>
+            <div class="row padding">
+              <div class="col-xs-4 col-xs-offset-4">
+                <a href="#" class="button button-primary button-pill button-small">查 询</a>
+              </div>
+            </div>
         </form>
         <div class="row">
-            <div id="toolbar4">
-                <select class="form-control selectpicker">
-            <option value="">Export Basic</option>
-            <option value="all">Export All</option>
-            <option value="selected">Export Selected</option>
-          </select>
+            <div id="caseToolbar">
+              <select class="selectpicker">
+                <option value="">Export Basic</option>
+                <option value="all">Export All</option>
+                <option value="selected">Export Selected</option>
+              </select>
+              <button type="button" class="btn btn-default caseAdd"><i class="glyphicon glyphicon-plus"></i></button>
             </div>
-            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#toolbar4" data-show-export="true"
+            </div>
+            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#caseToolbar" data-show-export="true"
                 data-striped="true" data-click-to-select="true" data-single-select="true">
                 <thead>
                     <tr>
@@ -87,7 +95,7 @@
                         <th data-field="state" data-editable="true" data-sortable="true">状态</th>
                         <th data-field="phase" data-editable="true" data-sortable="true">阶段</th>
                         <th data-field="executionDate" data-editable="true" data-sortable="true">计划执行日期</th>
-                        <th data-field="operation" data-sortable="true" data-events="operateEvents1" data-formatter="operateFormatter1">操作</th>
+                        <th data-field="operation" data-sortable="true" data-events="operateEventsCase" data-formatter="operateFormatter2">操作</th>
                     </tr>
                 </thead>
             </table>

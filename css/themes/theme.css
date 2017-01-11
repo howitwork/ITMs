@@ -200,7 +200,7 @@
     display: block;
     top: 0;
     left: 0;
-    background-image: image("./images/full-screen-image-1.jpg"));
+    background-image: image("./images/full-screen-image-1.jpg");
     background-size: cover;
     background-position: center center;
 }

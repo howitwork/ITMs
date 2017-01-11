@@ -1,0 +1,144 @@
+<div class="padding">
+    <form class="form-horizontal" action="" id="" role="form">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">系统名称：</label>
+            <div class="col-md-7">
+              <select name="systemName" id="systemName" class="editable-select form-control">
+                <option>core - 核心系统</option>
+                <option>payment - 支付系统</option>
+                <option>AML - 反洗钱系统</option>
+                <option>report - 报表系统</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">所属应用：</label>
+            <div class="col-md-7">
+              <select name="applicationId" id="applicationId" class="editable-select form-control">
+                <option>PMO- 项目管理办公室</option>
+                <option>BP- 业务平台</option>
+                <option>CI- 客户</option>
+                <option>CL- 额度</option>
+                <option>FACTA- FACTA</option>
+                <option>ECIF- ECIF</option>
+                <option>RP- 报表</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">提 出 人：</label>
+            <div class="col-md-7">
+              <input type="text" name="PeoplePut" id="PeoplePut" class="form-control" placeholder="必填">
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">缺陷跟进人：</label>
+            <div class="col-md-7">
+              <input type="text" name="followPeople" id="followPeople" class="form-control" placeholder="必填">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">紧急程度：</label>
+            <div class="col-md-7">
+              <select name="degreeEmergency" id="degreeEmergency" class="editable-select form-control">
+                <option>所有</option>
+                <option>high - 高</option>
+                <option>middle - 中</option>
+                <option>low - 低</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">工作量(人天)：</label>
+            <div class="col-md-7">
+              <input type="text" name="workload" id="workload" class="form-control" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">提出日期：</label>
+            <div class="col-md-7">
+              <div class='input-group date datepicker'>
+                  <input type='text' name="defectDate" id="defectDate" class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label class="col-md-4">计划完成日期：</label>
+            <div class="col-md-7">
+              <div class='input-group date datepicker'>
+                  <input type='text' name="endDate" id="endDate" class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="col-md-2">事件描述：</label>
+            <div class="col-md-9">
+              <textarea class="form-control" name="eventDescription" id="eventDescription" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="col-md-2">解决方案：</label>
+            <div class="col-md-9">
+              <textarea class="form-control" name="solution" id="solution" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="col-md-2">防范措施：</label>
+            <div class="col-md-9">
+              <textarea class="form-control" name="measuresPrevent" id="measuresPrevent" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label class="col-md-2">备注：</label>
+            <div class="col-md-9">
+              <textarea class="form-control" name="note" id="note" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>

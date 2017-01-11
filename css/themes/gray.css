@@ -73,3 +73,8 @@
 .es-list li.selected {
     background: rgba(120, 120, 120, 0.8);
 }
+.navbar-default .navbar-form .dropdown-menu>.active>a,
+.navbar-default .navbar-form .dropdown-menu>.active>a:focus,
+.navbar-default .navbar-form .dropdown-menu>.active>a:hover {
+  background-color: rgba(120, 120, 120, 0.8);
+}

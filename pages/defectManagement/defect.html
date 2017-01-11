@@ -1,0 +1,90 @@
+<div id="defect" class="tab-pane" role="tabpanel">
+    <div class="headSearch padding">
+        <form class="form-horizontal" action="" id="form-case" role="form">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="col-md-5">缺陷ID：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="defectId" id="defectId" class="form-control" placeholder="缺陷ID搜索...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="col-md-5">提出人：</label>
+                        <div class="col-md-7">
+                            <input type="text" name="PeoplePut" id="PeoplePut" class="form-control" placeholder="提出人搜索...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="col-md-5">紧急程度：</label>
+                        <div class="col-md-7">
+                            <select name="degreeEmergency" id="degreeEmergency" class="editable-select form-control">
+                              <option>所有</option>
+                              <option>high - 高</option>
+                              <option>middle - 中</option>
+                              <option>low - 低</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="col-md-5">当前状态：</label>
+                        <div class="col-md-7">
+                          <select name="currentState" id="currentState" class="editable-select form-control">
+                            <option>所有</option>
+                            <option>new - 新</option>
+                            <option>accepted - 已接受</option>
+                            <option>developed - 已开发</option>
+                            <option>retesting - 待复测</option>
+                            <option>rejectted - 已拒绝</option>
+                            <option>closed - 已关闭</option>
+                          </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row padding">
+              <div class="col-xs-4 col-xs-offset-4">
+                <a href="#" class="button button-primary button-pill button-small">查 询</a>
+              </div>
+            </div>
+        </form>
+        <div class="row">
+            <div id="defectToolbar">
+              <select class="selectpicker">
+                <option value="">Export Basic</option>
+                <option value="all">Export All</option>
+                <option value="selected">Export Selected</option>
+              </select>
+              <button type="button" class="btn btn-default defectAdd"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+            </div>
+            <table class="bootstrap-table text-left" id="contactTable" data-toggle="table" data-height="" data-url="./data/data3.json" data-pagination="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-toolbar="#defectToolbar" data-show-export="true"
+                data-striped="true" data-click-to-select="true" data-single-select="true">
+                <thead>
+                    <tr>
+                        <!-- <th data-field="state" data-checkbox="true"></th> -->
+                        <th data-field="caseNo" data-sortable="true">缺陷ID</th>
+                        <th data-field="demandNo" data-sortable="true">系统名称</th>
+                        <th data-field="head" data-sortable="true">所属模块</th>
+                        <th data-field="testOne" data-editable="true" data-sortable="true">当前状态</th>
+                        <th data-field="funDescription" data-editable="true" data-sortable="true">紧急程度</th>
+                        <th data-field="application" data-editable="true" data-sortable="true">提出人</th>
+                        <th data-field="completion" data-editable="true" data-sortable="true">事件解决跟进人</th>
+                        <th data-field="phase" data-editable="true" data-sortable="true">提出日期</th>
+                        <th data-field="executionDate" data-editable="true" data-sortable="true">修改日期</th>
+                        <th data-field="operation" data-sortable="true" data-events="operateEventsDefect" data-formatter="operateFormatter2">操作</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
