@@ -426,8 +426,8 @@
     background-color: #ff4351;
     padding: 2px 5px;
     position: absolute;
-    top: 0px;
-    left: 30px;
+    top: 7px;
+    left: 23px;
 }
 
 .main-panel .navbar-default .navbar-nav>li>a .badge.blue {
@@ -439,8 +439,8 @@
     height: 35px;
     width: 35px;
     position: absolute;
-    top: -10px;
-    right: -10px;
+    top: -3px;
+    right: -3px;
     -webkit-animation: pulsate 8s ease-out;
     animation: pulsate 8s ease-out;
     -webkit-animation-iteration-count: infinite;

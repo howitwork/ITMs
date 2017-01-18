@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/components/themifyIcons/themify-icons.css">
     <link rel="stylesheet" href="./css/components/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/components/editableSelect/jquery-editable-select.min.css">
+    <link rel="stylesheet" href="./css/components/bootstrapFileinput/css/fileinput.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/customer.css">
     <link rel="stylesheet" href="./css/caseManagement.css">
@@ -51,7 +52,7 @@
                             Li Shaoying
                             <b class="caret"></b>
                         </a>
-                        <div class="collapse photo" id="collapseExample" aria-expanded="false" style="height: 0px;">
+                        <div class="collapse photoNo" id="collapseExample" aria-expanded="false" style="height: 0px;">
                             <ul class="nav">
                                 <li><a href="#profile">My Profile</a></li>
                                 <li><a href="#editprofile">Edit Profile</a></li>
@@ -240,8 +241,13 @@
                                 </a>
                             </li> -->
                             <li>
-                                <a href="#settings" class="btn-rotate">
+                                <a href="#settings" class="btn-rotate settings">
                                     <i class="ti-settings"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/lock.html" class="lock btn-scale" title="锁屏">
+                                    <i class="ti-lock"></i>
                                 </a>
                             </li>
                             <li>
@@ -268,6 +274,7 @@
                         <div class="tab-content text-center">
                             <div role="tabpanel" class="tab-pane active" id="home">
                                 <h1 class="page-header">用户设置</h1>
+                                
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
                                 <h1 class="page-header">菜单设置</h1>
@@ -320,7 +327,14 @@
     <script src="./js/components/tableExport/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
     <script src="./js/components/tableExport/html2canvas/html2canvas.min.js"></script>
     <script src="./js/components/tableExport/tableExport.min.js"></script>
+    <script src="./js/components/typeahead/bootstrap3-typeahead.min.js"></script>
+    <script src="./js/components/bootstrapFileinput/js/plugins/canvas-to-blob.min.js"></script>
+    <script src="./js/components/bootstrapFileinput/js/plugins/sortable.min.js"></script>
+    <script src="./js/components/bootstrapFileinput/js/plugins/purify.min.js"></script>
+    <script src="./js/components/bootstrapFileinput/js/fileinput.min.js"></script>
     <script src="./js/components/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/components/bootstrapFileinput/themes/fa/theme.js"></script>
+    <script src="./js/components/bootstrapFileinput/js/locales/zh.js"></script>
     <script src="./js/components/sweetalert2/sweetalert2.min.js"></script>
     <script src="./js/components/es6-promise/es6-promise.auto.min.js"></script>
     <script src="./js/components/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -341,7 +355,6 @@
     <script src="./js/components/switch/bootstrap-switch.min.js"></script>
     <script src="./js/components/iCheck/icheck.min.js"></script>
     <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
-    <script src="./bower_components/bootstrap3-typeahead/bootstrap3-typeahead.min.js"></script>
     <!-- <script src="./js/app/caseManagement.js"></script> -->
     <script src="./js/app/app.js"></script>
     <script src="./js/app/main.js"></script>

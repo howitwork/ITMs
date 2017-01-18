@@ -5,6 +5,7 @@ $(function() {
                 $('.main-panel .content .tab-content').prepend(data);
                 branch.initBootstrapTable();
                 branch.initSelect();
+                branch.initFileinput();
             });
         },
 
@@ -14,18 +15,26 @@ $(function() {
                     title: title,
                     html: data,
                     width: width,
-                    showCancelButton: showCancelButton,
+                    showCancelButton: showCancelButton == 'true' ? true : false,
                     buttonsStyling: false,
                     confirmButtonClass: 'button button-primary button-pill button-small',
                     cancelButtonClass: 'button button-caution button-pill button-small',
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
-                    allowOutsideClick: false
-                }).then(function() {
+                    allowOutsideClick: false,
+                    //确定之前做的事情
+                    preConfirm: function() {
+                        return new Promise(function(resolve) {
+                          //传递到then方法
+                          resolve();
+                        });
+                    }
+                }).then(function(result) {
 
                 });
                 branch.initSelect();
                 branch.initDatetimepicker();
+                branch.initFileinput();
             });
         }
     }
@@ -41,13 +50,13 @@ $(function() {
     app.getManagementPage('pages/defectManagement/defect.html');
     app.getManagementPage('pages/updateManagement/update.html');
     //更新管理
-    $(document).on('click','#updateToolbar .updateAdd',function(){
-      app.getOperationPage(
-          'pages/updateManagement/edit.html',
-          '新增更新',
-          '65%',
-          'false'
-      )
+    $(document).on('click', '#updateToolbar .updateAdd', function() {
+        app.getOperationPage(
+            'pages/updateManagement/edit.html',
+            '新增更新',
+            '65%',
+            'true'
+        )
     });
     window.operateEventsUpdate = {
         'click .view': function(e, value, row, index) {
@@ -75,13 +84,13 @@ $(function() {
         }
     };
     //缺陷管理
-    $(document).on('click','#defectToolbar .defectAdd',function(){
-      app.getOperationPage(
-          'pages/defectManagement/edit.html',
-          '新增缺陷',
-          '65%',
-          'false'
-      )
+    $(document).on('click', '#defectToolbar .defectAdd', function() {
+        app.getOperationPage(
+            'pages/defectManagement/edit.html',
+            '新增缺陷',
+            '65%',
+            'true'
+        )
     });
     window.operateEventsDefect = {
         'click .view': function(e, value, row, index) {
@@ -109,13 +118,13 @@ $(function() {
         }
     };
     //案例管理
-    $(document).on('click','#caseToolbar .caseAdd',function(){
-      app.getOperationPage(
-          'pages/caseManagement/edit.html',
-          '新增需求',
-          '65%',
-          'false'
-      )
+    $(document).on('click', '#caseToolbar .caseAdd', function() {
+        app.getOperationPage(
+            'pages/caseManagement/edit.html',
+            '新增需求',
+            '65%',
+            'true'
+        )
     });
     window.operateEventsCase = {
         'click .view': function(e, value, row, index) {
@@ -143,13 +152,13 @@ $(function() {
         }
     };
     //需求管理
-    $(document).on('click','#demandToolbar .demandAdd',function(){
-      app.getOperationPage(
-          'pages/demandManagement/edit.html',
-          '新增需求',
-          '65%',
-          'false'
-      )
+    $(document).on('click', '#demandToolbar .demandAdd', function() {
+        app.getOperationPage(
+            'pages/demandManagement/edit.html',
+            '新增需求',
+            '65%',
+            'true'
+        )
     });
     window.operateEventsDemand = {
         'click .view': function(e, value, row, index) {
@@ -177,13 +186,13 @@ $(function() {
         }
     };
     //阶段管理
-    $(document).on('click','#stageToolbar .stageAdd',function(){
-      app.getOperationPage(
-          'pages/projectManagement/stage/edit.html',
-          '新增阶段',
-          '43%',
-          'false'
-      )
+    $(document).on('click', '#stageToolbar .stageAdd', function() {
+        app.getOperationPage(
+            'pages/projectManagement/stage/edit.html',
+            '新增阶段',
+            '43%',
+            'true'
+        )
     });
     window.operateEventsStage = {
         'click .view': function(e, value, row, index) {
@@ -211,13 +220,13 @@ $(function() {
         }
     };
     //应用管理
-    $(document).on('click','#applicationToolbar .applicationAdd',function(){
-      app.getOperationPage(
-          'pages/projectManagement/application/edit.html',
-          '新增应用',
-          '43%',
-          'false'
-      )
+    $(document).on('click', '#applicationToolbar .applicationAdd', function() {
+        app.getOperationPage(
+            'pages/projectManagement/application/edit.html',
+            '新增应用',
+            '43%',
+            'true'
+        )
     });
     window.operateEventsApplication = {
         'click .view': function(e, value, row, index) {
@@ -245,13 +254,13 @@ $(function() {
         }
     };
     //项目清单
-    $(document).on('click','#listToolbar .listAdd',function(){
-      app.getOperationPage(
-          'pages/projectManagement/list/edit.html',
-          '新增项目',
-          '43%',
-          'false'
-      )
+    $(document).on('click', '#listToolbar .listAdd', function() {
+        app.getOperationPage(
+            'pages/projectManagement/list/edit.html',
+            '新增项目',
+            '43%',
+            'true'
+        )
     });
     window.operateEventsList = {
         'click .view': function(e, value, row, index) {
@@ -279,13 +288,13 @@ $(function() {
         }
     };
     //菜单管理
-    $(document).on('click','#menuToolbar .menuAdd',function(){
-      app.getOperationPage(
-          'pages/systemManagement/menu/add.html',
-          '新增菜单',
-          '65%',
-          'false'
-      )
+    $(document).on('click', '#menuToolbar .menuAdd', function() {
+        app.getOperationPage(
+            'pages/systemManagement/menu/add.html',
+            '新增菜单',
+            '65%',
+            'true'
+        )
     });
     window.operateEvents4 = {
         'click .view': function(e, value, row, index) {
@@ -313,13 +322,13 @@ $(function() {
         }
     };
     //角色管理
-    $(document).on('click','#roleToolbar .roleAdd',function(){
-      app.getOperationPage(
-          'pages/systemManagement/role/add.html',
-          '新增用户',
-          '43%',
-          'false'
-      )
+    $(document).on('click', '#roleToolbar .roleAdd', function() {
+        app.getOperationPage(
+            'pages/systemManagement/role/add.html',
+            '新增用户',
+            '43%',
+            'true'
+        )
     });
     window.operateEvents3 = {
         'click .view': function(e, value, row, index) {
@@ -348,22 +357,22 @@ $(function() {
     };
 
     //用户管理
-    $(document).on('click','#userToolbar .userAdd',function(){
-      app.getOperationPage(
-          'pages/systemManagement/user/add.html',
-          '新增用户',
-          '43%',
-          'false'
-      )
+    $(document).on('click', '#userToolbar .userAdd', function() {
+        app.getOperationPage(
+            'pages/systemManagement/user/add.html',
+            '新增用户',
+            '43%',
+            'true'
+        )
     });
     window.operateEvents2 = {
         'click .view': function(e, value, row, index) {
-          app.getOperationPage(
-              'pages/systemManagement/user/view.html',
-              '查看用户',
-              '40%',
-              'false'
-          )
+            app.getOperationPage(
+                'pages/systemManagement/user/view.html',
+                '查看用户',
+                '40%',
+                'false'
+            )
         },
         'click .edit': function(e, value, row, index) {
             app.getOperationPage(
@@ -374,7 +383,7 @@ $(function() {
             )
         },
         'click .remove': function(e, value, row, index) {
-            $('#contactTable').bootstrapTable('remove', {
+            $('#userTable').bootstrapTable('remove', {
                 field: 'caseNo',
                 values: [row.caseNo]
             });

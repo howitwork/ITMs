@@ -6,7 +6,8 @@ require.config({
         bootstrap: '../components/bootstrap/bootstrap.min',
         bootstrapValidator: '../components/bootstrapValidator/bootstrapValidator.min',
         bootstrapValidatorZh: '../components/bootstrapValidator/language/zh_CN',
-        select: '../components/select/bootstrap-select.min'
+        select: '../components/select/bootstrap-select.min',
+        moment: '../components/moment/moment.min'
     },
     shim: {
         bootstrap : {

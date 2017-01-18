@@ -1,6 +1,9 @@
-define(['jquery', 'bootstrap', 'bootstrapValidator', 'select'],
+define(['jquery', 'bootstrap', 'bootstrapValidator', 'select','moment'],
     function($) {
         $(function() {
+            var moment=require('moment')
+            var k = moment().unix()*1000;
+            console.log(moment(k).format('YYYY-MM-DD HH:mm:ss'));
             $('.selectpicker').selectpicker('refresh');
             $('.form-horizontal').bootstrapValidator({
                 autoFocus: true,
@@ -32,6 +35,9 @@ define(['jquery', 'bootstrap', 'bootstrapValidator', 'select'],
                         }
                     }
                 }
+            })
+            $('.lock .btn-wd').click(function(){
+              location.href = './index.html';
             })
         });
     })

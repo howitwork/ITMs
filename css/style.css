@@ -262,7 +262,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
 .sidebar .sidebar-wrapper>.nav p, .off-canvas-sidebar .sidebar-wrapper>.nav p {
     margin: 0;
     line-height: 30px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 400;
     text-transform: uppercase;
     position: relative;
@@ -287,7 +287,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
 }
 
 .sidebar .sidebar-wrapper>.nav [data-toggle="collapse"]~div>ul>li>a, .off-canvas-sidebar .sidebar-wrapper>.nav [data-toggle="collapse"]~div>ul>li>a {
-    padding-left: 52px;
+    padding-left: 68px;
     margin: 0;
 }
 
@@ -740,7 +740,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
     visibility: visible;
     position: absolute;
     left: 80px;
-    top: 10px;
+    top: 15px;
     width: 180px;
     z-index: 2016;
     background-color: #f4f3ef;
@@ -766,7 +766,12 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
     display: block;
     z-index: 5;
 }
-
+.sidebar.mini .collapse {
+    border: 1px solid rgb(230, 228, 228);
+}
+.sidebar.mini .collapse>.nav li>a {
+  margin-top: 0px;
+}
 .sidebar-mini .main-panel {
     width: calc(100% - 80px);
     margin-left: 80px;
@@ -870,6 +875,15 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
     margin-top: 0px;
     left: 0px!important;
     width: 100%;
+}
+.modal-backdrop {
+  z-index: 0;
+}
+.file-zoom-dialog .file-other-icon {
+    font-size: 35vmin;
+}
+.file-zoom-fullscreen .file-other-icon {
+    font-size: 55vmin;
 }
 @media (min-width: 992px) {}
 
