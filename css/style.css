@@ -44,6 +44,9 @@ span[data-notify=icon] {
     font-size: 40px;
     margin-right: 10px;
 }
+img {
+  max-width: 100%; 
+}
 .inline-block {
   display: inline-block;
 }

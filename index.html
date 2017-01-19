@@ -23,9 +23,11 @@
     <link rel="stylesheet" href="./css/components/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/components/editableSelect/jquery-editable-select.min.css">
     <link rel="stylesheet" href="./css/components/bootstrapFileinput/css/fileinput.min.css">
+    <link rel="stylesheet" href="./css/components/cropper/cropper.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/customer.css">
     <link rel="stylesheet" href="./css/caseManagement.css">
+    <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="./css/themes/theme.css">
     <link rel="stylesheet" href="./css/app.css">
     <!-- endbuild -->
@@ -271,10 +273,56 @@
                     </div>
                     <div class="col-xs-10">
                         <!-- Tab panes -->
-                        <div class="tab-content text-center">
+                        <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
-                                <h1 class="page-header">用户设置</h1>
-                                
+                                  <div class="setting-user padding">
+                                    <div class="row">
+                                      <div class="col-xs-3">
+                                        <div class="photo">
+                                            <img id="avatar" src="./images/lsy.jpg" alt="" class="">
+                                        </div>
+                                      </div>
+                                      <div class="col-xs-9">
+                                        <div class="upload text-left">
+                                          <h4>上传新的头像</h4>
+                                          <input class="sr-only" id="inputImage" name="file" type="file" accept="image/gif, image/jpeg">
+                                          <a href="#" class="btn-upload button button-primary button-pill button-small">选择图片</a>
+                                          <span class="img-name">未选择</span>
+                                          <p class="help-block">允许的最大文件大小为200 kb</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="divider"></div>
+                                        <div class="remove">
+                                          <a href="#" class="btn-remove button button-primary button-pill button-small">移除图片</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="row">
+                                      <div class="col-xs-10 col-xs-offset-1">
+                                        <form role="form">
+                                          <div class="form-group">
+                                            <label>用户名：</label>
+                                            <input type="text" class="form-control" id="" placeholder="输入用户名">
+                                          </div>
+                                          <div class="form-group">
+                                            <label>邮  箱：</label>
+                                            <input type="email" class="form-control" id="" placeholder="输入邮件">
+                                          </div>
+                                          <div class="form-group">
+                                            <label>密  码：</label>
+                                            <input type="password" class="form-control" id="" placeholder="输入密码">
+                                          </div>
+                                          <div class="form-group">
+                                            <label>关于我：</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                            <p class="help-block">告诉我们关于你自己在少于250个字符。</p>
+                                          </div>
+                                          <button type="submit" class="button button-primary button-pill button-small">保 存</button>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
                                 <h1 class="page-header">菜单设置</h1>
@@ -355,8 +403,10 @@
     <script src="./js/components/switch/bootstrap-switch.min.js"></script>
     <script src="./js/components/iCheck/icheck.min.js"></script>
     <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
+    <script src="./js/components/cropper/cropper.min.js"></script>
     <!-- <script src="./js/app/caseManagement.js"></script> -->
     <script src="./js/app/app.js"></script>
+    <script src="./js/app/settings.js"></script>
     <script src="./js/app/main.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
