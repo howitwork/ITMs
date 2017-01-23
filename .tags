@@ -1,0 +1,3 @@
+getManagementPage	/Users/lishaoying/Documents/hisuntech/github/ITM/js/app/app.js	/^    getManagementPage: function(pageUrl) {$/;"	function	line:3
+getOperationPage	/Users/lishaoying/Documents/hisuntech/github/ITM/js/app/app.js	/^    getOperationPage: function(operateUrl, title, width, showCancelButton) {$/;"	function	line:12
+preConfirm	/Users/lishaoying/Documents/hisuntech/github/ITM/js/app/app.js	/^          preConfirm: function() {$/;"	function	line:26
