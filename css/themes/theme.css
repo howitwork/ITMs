@@ -183,8 +183,8 @@
     border-radius: 0;
     width: auto;
     height: 100px;
-    transform: translateX(-30%);
-    -webkit-transform: translateX(-30%);
+    /*transform: translateX(-30%);
+    -webkit-transform: translateX(-30%);*/
     margin: 0 auto;
 }
 

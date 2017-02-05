@@ -45,7 +45,7 @@ span[data-notify=icon] {
     margin-right: 10px;
 }
 img {
-  max-width: 100%; 
+  max-width: 100%;
 }
 .inline-block {
   display: inline-block;
@@ -482,6 +482,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
     /*padding: 20px 10px 0 10px;*/
     height: calc(100% - 85px);
     min-height: calc(100% - 85px);
+    display: none;
 }
 
 .content .container-fluid, .content .container-fluid .row, .content .container-fluid .row .col-md-12 {
@@ -830,6 +831,10 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   height: calc(100% - 75px);
   border-top: 1px solid #ddd;
   display: none;
+}
+.main-panel>.index {
+  height: calc(100% - 75px);
+  border-top: 1px solid #ddd;
 }
 .main-panel>.settings .row{
   height: 100%;

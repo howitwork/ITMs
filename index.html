@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/components/editableSelect/jquery-editable-select.min.css">
     <link rel="stylesheet" href="./css/components/bootstrapFileinput/css/fileinput.min.css">
     <link rel="stylesheet" href="./css/components/cropper/cropper.min.css">
+    <link rel="stylesheet" href="./bower_components/chartist/dist/chartist.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/customer.css">
     <link rel="stylesheet" href="./css/caseManagement.css">
@@ -74,9 +75,9 @@
                         </a>
                         <div class="collapse" id="systemManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="user">用户管理</a></li>
-                                <li><a href="#" data-menu-id="role">角色管理</a></li>
-                                <li><a href="#" data-menu-id="menu">菜单管理</a></li>
+                                <li><a href="#/user" data-menu-id="user">用户管理</a></li>
+                                <li><a href="#/role" data-menu-id="role">角色管理</a></li>
+                                <li><a href="#/menu" data-menu-id="menu">菜单管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -89,9 +90,9 @@
                         </a>
                         <div class="collapse" id="projectManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="list">项目清单</a></li>
-                                <li><a href="#" data-menu-id="application">应用管理</a></li>
-                                <li><a href="#" data-menu-id="stage1">阶段管理</a></li>
+                                <li><a href="#/list" data-menu-id="list">项目清单</a></li>
+                                <li><a href="#/application" data-menu-id="application">应用管理</a></li>
+                                <li><a href="#/stage1" data-menu-id="stage1">阶段管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -104,7 +105,7 @@
                         </a>
                         <div class="collapse" id="demandManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="demand">需求管理</a></li>
+                                <li><a href="#/demand" data-menu-id="demand">需求管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -117,7 +118,7 @@
                         </a>
                         <div class="collapse" id="caseManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="case">案例管理</a></li>
+                                <li><a href="#/case" data-menu-id="case">案例管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -130,7 +131,7 @@
                         </a>
                         <div class="collapse" id="defectManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="defect">缺陷管理</a></li>
+                                <li><a href="#/defect" data-menu-id="defect">缺陷管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -143,7 +144,7 @@
                         </a>
                         <div class="collapse" id="updateManagement" aria-expanded="false">
                             <ul class="nav">
-                                <li><a href="#" data-menu-id="update">更新管理</a></li>
+                                <li><a href="#/update" data-menu-id="update">更新管理</a></li>
                             </ul>
                         </div>
                     </li>
@@ -165,7 +166,7 @@
                             </div>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown theme">
+                            <li class="dropdown theme" data-toggle="tooltip" data-placement="bottom" title="主题设置">
                                 <a href="#" class="dropdown-toggle btn-scale" data-toggle="dropdown">
                                     <i class="ti-panel"></i>
                                 </a>
@@ -222,7 +223,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown" data-toggle="tooltip" data-placement="bottom" title="消息">
                                 <a href="#" class="dropdown-toggle btn-rotate" data-toggle="dropdown">
                                     <i class="ti-bell"></i>
                                     <span class="badge">5</span>
@@ -243,17 +244,17 @@
                                     <div class="notification-ring blue"></div>
                                 </a>
                             </li> -->
-                            <li>
-                                <a href="#settings" class="btn-rotate settings">
+                            <li data-toggle="tooltip" data-placement="bottom" title="系统设置">
+                                <a href="#/settings" class="btn-rotate settings">
                                     <i class="ti-settings"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="/lock.html" class="lock btn-scale" title="锁屏">
+                            <li data-toggle="tooltip" data-placement="bottom" title="锁屏">
+                                <a href="#/lock" class="lock btn-scale">
                                     <i class="ti-lock"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li data-toggle="tooltip" data-placement="bottom" title="退出">
                                 <a href="#loginOut" class="btn-rotate btn-scale">
                                     <i class="ti-power-off"></i>
                                 </a>
@@ -262,6 +263,38 @@
                     </div>
                 </div>
             </nav>
+            <div class="index">
+              <!-- <div class="row">
+                <div class="col-xs-6">
+                  <div class="ct-chart ct-golden-section" id="chart1"></div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="ct-chart ct-golden-section" id="chart2"></div>
+                </div>
+              </div> -->
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="ct-chart ct-perfect-fourth" id="chart3"></div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="ct-chart ct-perfect-fourth" id="chart4"></div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="ct-chart ct-perfect-fourth" id="chart5"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="ct-chart ct-perfect-fourth" id="chart6"></div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="ct-chart ct-perfect-fourth" id="chart7"></div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="ct-chart ct-perfect-fourth" id="chart8"></div>
+                </div>
+              </div>
+            </div>
             <div class="settings">
                 <div class="row">
                     <div class="col-xs-2">
@@ -405,10 +438,12 @@
     <script src="./js/components/iCheck/icheck.min.js"></script>
     <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
     <script src="./js/components/cropper/cropper.min.js"></script>
+    <script src="./bower_components/chartist/dist/chartist.min.js"></script>
     <!-- <script src="./js/app/caseManagement.js"></script> -->
+    <script src="./js/app/main.js"></script>
     <script src="./js/app/app.js"></script>
     <script src="./js/app/settings.js"></script>
-    <script src="./js/app/main.js"></script>
+    <script src="./js/app/index.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
         $().ready(function() {
@@ -448,16 +483,16 @@
 
         function operateFormatter3(value, row, index) {
             return [
-                '<a class="add text-info" href="javascript:void(0)" title="add">',
+                '<a class="add text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="新增">',
                 '<i class="ti-plus"></i>',
                 '</a>',
-                '<a class="view text-info" href="javascript:void(0)" title="view">',
+                '<a class="view text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="查看">',
                 '<i class="ti-image"></i>',
                 '</a>',
-                '<a class="edit text-info" href="javascript:void(0)" title="edit">',
+                '<a class="edit text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="编辑">',
                 '<i class="ti-pencil-alt"></i>',
                 '</a>',
-                '<a class="remove ml10 text-danger" href="javascript:void(0)" title="Remove">',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="删除">',
                 '<i class="ti-trash"></i>',
                 '</a>'
             ].join('');
@@ -465,27 +500,13 @@
 
         function operateFormatter2(value, row, index) {
             return [
-                '<a class="view text-info" href="javascript:void(0)" title="view">',
+                '<a class="view text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="查看">',
                 '<i class="ti-image"></i>',
                 '</a>',
-                '<a class="edit text-info" href="javascript:void(0)" title="edit">',
+                '<a class="edit text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="编辑">',
                 '<i class="ti-pencil-alt"></i>',
                 '</a>',
-                '<a class="remove ml10 text-danger" href="javascript:void(0)" title="Remove">',
-                '<i class="ti-trash"></i>',
-                '</a>'
-            ].join('');
-        }
-
-        function operateFormatter1(value, row, index) {
-            return [
-                '<a class="view text-info" href="javascript:void(0)" title="view">',
-                '<i class="ti-image"></i>',
-                '</a>',
-                '<a class="add text-info" href="javascript:void(0)" title="add">',
-                '<i class="ti-plus"></i>',
-                '</a>',
-                '<a class="remove ml10 text-danger" href="javascript:void(0)" title="Remove">',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="删除">',
                 '<i class="ti-trash"></i>',
                 '</a>'
             ].join('');

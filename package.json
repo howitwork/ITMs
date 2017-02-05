@@ -18,6 +18,7 @@
   "homepage": "https://github.com/persilee/bootstrap4-ng-bank#readme",
   "devDependencies": {
     "connect-livereload": "^0.6.0",
+    "eslint": "^3.15.0",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",

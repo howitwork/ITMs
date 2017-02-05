@@ -1,4 +1,55 @@
 $(function() {
+  function Router() {
+    this.routes = {};
+    this.currentUrl = '';
+  }
+  Router.prototype.route = function(path, callback) {
+    // console.log(path);
+    // console.log(callback);
+    this.routes[path] = callback || function() {};
+  };
+  Router.prototype.refresh = function() {
+    this.currentUrl = location.hash.slice(1) || '/';
+    if (this.currentUrl == '') {
+      location.href = '/index.html';
+    } else {
+      this.routes[this.currentUrl]();
+    }
+  };
+  Router.prototype.init = function() {
+    window.addEventListener('load', this.refresh.bind(this), false);
+    window.addEventListener('hashchange', this.refresh.bind(this), false);
+  };
+  window.Router = new Router();
+  window.Router.init();
+  window.Router.route('/', function() {});
+  window.Router.route('/settings', function() {
+    $('.navbar-default .navbar-nav>li>a.settings').trigger('click');
+  });
+  window.Router.route('/lock', function() {
+    window.history.replaceState(null, null, '#');
+  });
+  $('.lock').on('click', function() {
+    window.location.href = '/lock.html';
+  });
+  $('.sidebar .sidebar-wrapper>.nav li>a:not([data-toggle])').each(function() {
+    var url = $(this).attr('href').slice(1);
+    var _this = $(this);
+    window.Router.route(url, function() {
+      if (url.slice(1) == _this.attr('data-menu-id')) {
+        _this.trigger('click');
+      }
+    });
+  });
+  // window.Router.route('/user', function() {
+  //   console.log('user');
+  // });
+  // window.Router.route('/role', function() {
+  //   console.log('role');
+  // });
+  // window.Router.route('/menu', function() {
+  //   console.log('menu');
+  // });
   var app = {
     getManagementPage: function(pageUrl) {
       $.get(pageUrl, function(data) {
@@ -34,7 +85,7 @@ $(function() {
         branch.initFileinput();
       });
     }
-  }
+  };
 
   app.getManagementPage('pages/systemManagement/user/userManagement.html');
   app.getManagementPage('pages/systemManagement/role/roleManagement.html');
@@ -53,7 +104,7 @@ $(function() {
       '新增更新',
       '65%',
       'true'
-    )
+    );
   });
   window.operateEventsUpdate = {
     'click .view': function(e, value, row, index) {
@@ -62,7 +113,7 @@ $(function() {
         '查看更新',
         '60%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -70,7 +121,7 @@ $(function() {
         '编辑更新',
         '65%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -87,7 +138,7 @@ $(function() {
       '新增缺陷',
       '65%',
       'true'
-    )
+    );
   });
   window.operateEventsDefect = {
     'click .view': function(e, value, row, index) {
@@ -96,7 +147,7 @@ $(function() {
         '查看缺陷',
         '60%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -104,7 +155,7 @@ $(function() {
         '编辑缺陷',
         '65%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -121,7 +172,7 @@ $(function() {
       '新增需求',
       '65%',
       'true'
-    )
+    );
   });
   window.operateEventsCase = {
     'click .view': function(e, value, row, index) {
@@ -130,7 +181,7 @@ $(function() {
         '查看需求',
         '60%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -138,7 +189,7 @@ $(function() {
         '编辑需求',
         '65%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -155,7 +206,7 @@ $(function() {
       '新增需求',
       '65%',
       'true'
-    )
+    );
   });
   window.operateEventsDemand = {
     'click .view': function(e, value, row, index) {
@@ -164,7 +215,7 @@ $(function() {
         '查看需求',
         '60%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -172,7 +223,7 @@ $(function() {
         '编辑需求',
         '65%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -189,7 +240,7 @@ $(function() {
       '新增阶段',
       '43%',
       'true'
-    )
+    );
   });
   window.operateEventsStage = {
     'click .view': function(e, value, row, index) {
@@ -198,7 +249,7 @@ $(function() {
         '查看阶段',
         '40%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -206,7 +257,7 @@ $(function() {
         '编辑阶段',
         '43%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -223,7 +274,7 @@ $(function() {
       '新增应用',
       '43%',
       'true'
-    )
+    );
   });
   window.operateEventsApplication = {
     'click .view': function(e, value, row, index) {
@@ -232,7 +283,7 @@ $(function() {
         '查看应用',
         '40%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -240,7 +291,7 @@ $(function() {
         '编辑应用',
         '43%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -257,7 +308,7 @@ $(function() {
       '新增项目',
       '43%',
       'true'
-    )
+    );
   });
   window.operateEventsList = {
     'click .view': function(e, value, row, index) {
@@ -266,7 +317,7 @@ $(function() {
         '查看项目',
         '40%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -274,7 +325,7 @@ $(function() {
         '编辑项目',
         '43%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -291,7 +342,7 @@ $(function() {
       '新增菜单',
       '65%',
       'true'
-    )
+    );
   });
   window.operateEvents4 = {
     'click .view': function(e, value, row, index) {
@@ -300,7 +351,7 @@ $(function() {
         '查看菜单',
         '55%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -308,7 +359,7 @@ $(function() {
         '编辑菜单',
         '65%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -325,7 +376,7 @@ $(function() {
       '新增用户',
       '43%',
       'true'
-    )
+    );
   });
   window.operateEvents3 = {
     'click .view': function(e, value, row, index) {
@@ -334,7 +385,7 @@ $(function() {
         '查看角色',
         '40%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -342,7 +393,7 @@ $(function() {
         '编辑角色',
         '43%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#contactTable').bootstrapTable('remove', {
@@ -360,7 +411,7 @@ $(function() {
       '新增用户',
       '43%',
       'true'
-    )
+    );
   });
   window.operateEvents2 = {
     'click .view': function(e, value, row, index) {
@@ -369,7 +420,7 @@ $(function() {
         '查看用户',
         '40%',
         'false'
-      )
+      );
     },
     'click .edit': function(e, value, row, index) {
       app.getOperationPage(
@@ -377,7 +428,7 @@ $(function() {
         '编辑用户',
         '43%',
         'true'
-      )
+      );
     },
     'click .remove': function(e, value, row, index) {
       $('#userTable').bootstrapTable('remove', {
@@ -387,4 +438,4 @@ $(function() {
       return false;
     }
   };
-})
+});

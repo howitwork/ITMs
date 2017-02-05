@@ -5,7 +5,9 @@
 tbody td a.view ,tbody td a.add ,tbody td a.edit,tbody td a.remove {
   margin-left: 10px;
 }
-
+tbody td a:last-child {
+  margin-right: 10px;
+}
 .swal2-modal .swal2-content .form-control-static {
   padding-top: 0px;
 }
