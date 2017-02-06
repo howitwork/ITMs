@@ -1,3 +1,7 @@
+/**
+ * [branch 这个框架的主要对象]
+ * @type {Object}
+ */
 var branch = {
   init: function() {
     this.renderData();

@@ -1,4 +1,8 @@
 $(function() {
+  /**
+   * [routes 控制历史记录]
+   * @type {Object}
+   */
   function Router() {
     this.routes = {};
     this.currentUrl = '';

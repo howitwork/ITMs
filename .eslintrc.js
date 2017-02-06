@@ -1,4 +1,8 @@
 module.exports = {
+  "plugins": ["html"],
+  "settings": {
+    "html/indent": "0",
+  },
   "env": {
     "browser": true,
     "node": true,
@@ -17,6 +21,8 @@ module.exports = {
     "branch": true,
     "swal": true,
     "Promise": true,
-    "Chartist": true
+    "Chartist": true,
+    "define": true,
+    "require": true
   },
 };

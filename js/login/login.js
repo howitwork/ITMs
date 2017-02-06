@@ -1,7 +1,7 @@
 define(['jquery', 'bootstrap', 'bootstrapValidator', 'select', 'moment'],
   function($) {
     $(function() {
-      var moment = require('moment')
+      var moment = require('moment');
       var k = moment().unix() * 1000;
       console.log(moment(k).format('YYYY-MM-DD HH:mm:ss'));
       $('.selectpicker').selectpicker('refresh');
@@ -35,7 +35,7 @@ define(['jquery', 'bootstrap', 'bootstrapValidator', 'select', 'moment'],
             }
           }
         }
-      })
+      });
       //禁止浏览器返回操作
       if (window.history && window.history.pushState) {
         $(window).on('popstate', function() {
@@ -47,6 +47,6 @@ define(['jquery', 'bootstrap', 'bootstrapValidator', 'select', 'moment'],
       window.history.forward(1);
       $('.lock .btn-wd').click(function() {
         history.go(-3);
-      })
+      });
     });
-  })
+  });

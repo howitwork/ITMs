@@ -4,6 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-getManagementPage	/Users/lishaoying/Documents/hisuntech/github/ITM/js/app/app.js	/^    getManagementPage: function(pageUrl) {$/;"	function	line:3
-getOperationPage	/Users/lishaoying/Documents/hisuntech/github/ITM/js/app/app.js	/^    getOperationPage: function(operateUrl, title, width, showCancelButton) {$/;"	function	line:12
-preConfirm	/Users/lishaoying/Documents/hisuntech/github/ITM/js/app/app.js	/^          preConfirm: function() {$/;"	function	line:26
+html	/Users/lishaoying/Documents/hisuntech/github/ITM/aaa.html	/^<html lang="en">$/;"	function	line:2
+head	/Users/lishaoying/Documents/hisuntech/github/ITM/aaa.html	/^<head>$/;"	function	line:3
+meta	/Users/lishaoying/Documents/hisuntech/github/ITM/aaa.html	/^  <meta charset="UTF-8">$/;"	function	line:4
+title	/Users/lishaoying/Documents/hisuntech/github/ITM/aaa.html	/^  <title>Document<\/title>$/;"	function	line:5
+body	/Users/lishaoying/Documents/hisuntech/github/ITM/aaa.html	/^<body>$/;"	function	line:7
