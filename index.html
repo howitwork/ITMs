@@ -264,14 +264,6 @@
                 </div>
             </nav>
             <div class="index">
-                <!-- <div class="row">
-                <div class="col-xs-6">
-                  <div class="ct-chart ct-golden-section" id="chart1"></div>
-                </div>
-                <div class="col-xs-6">
-                  <div class="ct-chart ct-golden-section" id="chart2"></div>
-                </div>
-              </div> -->
                 <div class="row">
                     <div class="col-xs-4">
                         <div class="ct-chart ct-perfect-fourth" id="chart3"></div>
@@ -294,10 +286,16 @@
                         <div class="ct-chart ct-perfect-fourth" id="chart8"></div>
                     </div>
                 </div>
+                <!-- <div class="row customer text-center padding">
+                  <a href="#" data-menu-id="customer" class="button button-primary button-pill button-small">客户资料</a>
+                </div> -->
             </div>
             <div class="settings">
                 <div class="row">
                     <div class="col-xs-2">
+                        <div class="nav-header text-center">
+                            <span class="header-title">设置</span>
+                        </div>
                         <ul class="nav nav-stacked nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">用户设置</a></li>
                             <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">菜单设置</a></li>
@@ -306,6 +304,9 @@
                         </ul>
                     </div>
                     <div class="col-xs-10">
+                        <div class="tab-header text-left">
+                            <span class="header-title"></span>
+                        </div>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">
@@ -366,6 +367,37 @@
                             </div>
                             <div role="tabpanel" class="tab-pane" id="settings">
                                 <h1 class="page-header">系统设置</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="messages">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div class="nav-header text-center">
+                            <span class="header-title">消息中心</span>
+                        </div>
+                        <ul class="nav nav-stacked nav-tabs" role="tablist">
+                            <li class="active"><a href="#all" role="tab" data-toggle="tab">全部消息</a></li>
+                            <li><a href="#unread" role="tab" data-toggle="tab">未读消息</a></li>
+                            <li><a href="#read" role="tab" data-toggle="tab">已读消息</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-10">
+                        <div class="tab-header text-left">
+                            <span class="header-title"></span>
+                        </div>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="all">
+                                <h1 class="page-header">全部消息</h1>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="unread">
+                                <h1 class="page-header">未读消息</h1>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="read">
+                                <h1 class="page-header">已读消息</h1>
                             </div>
                         </div>
                     </div>
@@ -446,71 +478,71 @@
     <script src="./js/app/index.js"></script>
     <!-- endbuild -->
     <script type="text/javascript">
-    $().ready(function() {
-      branch.init();
-      if ($.cookie('themeColor') != '' && typeof($.cookie('themeColor')) != 'undefined') {
-        $('#themes').attr('href', './css/themes/' + $.cookie('themeColor') + '.css');
-        $('.sidebar').attr('data-color', $.cookie('themeColor'));
-        $('#minimizeSidebar').attr('data-color', $.cookie('themeColor'));
-        $('.nav.navbar-nav .theme .badge').siblings().removeClass('active');
-        $('.nav.navbar-nav .theme .badge[data-color=' + $.cookie('themeColor') + ']').addClass('active');
-      } else {
-        $('#themes').attr('href', './css/themes/azure.css');
-      }
-      if ($.cookie('themeImg') != '' && typeof($.cookie('themeImg')) != 'undefined') {
-        $('.sidebar .sidebar-background').css('background-image', 'url("' + $.cookie('themeImg') + '")');
-        var $number = $.cookie('themeImg').substr(-5, 1);
-        $('.nav.navbar-nav .theme .img-holder').parent('li').removeClass('active');
-        $('.nav.navbar-nav .theme .img-holder').parent('li').eq($number - 1).addClass('active');
-      }
-      if ($.cookie('switchImg') == 'false' && typeof($.cookie('switchImg')) != 'undefined') {
-        $('.sidebar .sidebar-background').css('background-image', 'url("")');
-        $('.nav.navbar-nav .theme .adjustments-line .switch-onColor.img').bootstrapSwitch('state', false);
-      }
-      if ($.cookie('switchdebar') == 'false' && typeof($.cookie('switchdebar')) != 'undefined') {
-        $('.nav.navbar-nav .theme .adjustments-line .switch-onColor.debar').bootstrapSwitch('state', false);
-        $('#minimizeSidebar').find('i').attr('class', 'ti-menu-alt');
-        $('.sidebar').addClass('mini');
-        $('body').addClass('sidebar-mini');
-        $('.sidebar .logo').addClass('hidden');
-        $('.mini-logo').removeClass('hidden');
-        $('.user .photo').width(50);
-        $('.user .info').css('display', 'none');
-        $('.sidebar.mini .nav li a').attr('data-toggle', '');
-      }
-    });
+        $().ready(function() {
+            branch.init();
+            if ($.cookie('themeColor') != '' && typeof($.cookie('themeColor')) != 'undefined') {
+                $('#themes').attr('href', './css/themes/' + $.cookie('themeColor') + '.css');
+                $('.sidebar').attr('data-color', $.cookie('themeColor'));
+                $('#minimizeSidebar').attr('data-color', $.cookie('themeColor'));
+                $('.nav.navbar-nav .theme .badge').siblings().removeClass('active');
+                $('.nav.navbar-nav .theme .badge[data-color=' + $.cookie('themeColor') + ']').addClass('active');
+            } else {
+                $('#themes').attr('href', './css/themes/azure.css');
+            }
+            if ($.cookie('themeImg') != '' && typeof($.cookie('themeImg')) != 'undefined') {
+                $('.sidebar .sidebar-background').css('background-image', 'url("' + $.cookie('themeImg') + '")');
+                var $number = $.cookie('themeImg').substr(-5, 1);
+                $('.nav.navbar-nav .theme .img-holder').parent('li').removeClass('active');
+                $('.nav.navbar-nav .theme .img-holder').parent('li').eq($number - 1).addClass('active');
+            }
+            if ($.cookie('switchImg') == 'false' && typeof($.cookie('switchImg')) != 'undefined') {
+                $('.sidebar .sidebar-background').css('background-image', 'url("")');
+                $('.nav.navbar-nav .theme .adjustments-line .switch-onColor.img').bootstrapSwitch('state', false);
+            }
+            if ($.cookie('switchdebar') == 'false' && typeof($.cookie('switchdebar')) != 'undefined') {
+                $('.nav.navbar-nav .theme .adjustments-line .switch-onColor.debar').bootstrapSwitch('state', false);
+                $('#minimizeSidebar').find('i').attr('class', 'ti-menu-alt');
+                $('.sidebar').addClass('mini');
+                $('body').addClass('sidebar-mini');
+                $('.sidebar .logo').addClass('hidden');
+                $('.mini-logo').removeClass('hidden');
+                $('.user .photo').width(50);
+                $('.user .info').css('display', 'none');
+                $('.sidebar.mini .nav li a').attr('data-toggle', '');
+            }
+        });
 
-    function operateFormatter3(value, row, index) {
-      return [
-        '<a class="add text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="新增">',
-        '<i class="ti-plus"></i>',
-        '</a>',
-        '<a class="view text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="查看">',
-        '<i class="ti-image"></i>',
-        '</a>',
-        '<a class="edit text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="编辑">',
-        '<i class="ti-pencil-alt"></i>',
-        '</a>',
-        '<a class="remove ml10 text-danger" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="删除">',
-        '<i class="ti-trash"></i>',
-        '</a>'
-      ].join('');
-    }
+        function operateFormatter3(value, row, index) {
+            return [
+                '<a class="add text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="新增">',
+                '<i class="ti-plus"></i>',
+                '</a>',
+                '<a class="view text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="查看">',
+                '<i class="ti-image"></i>',
+                '</a>',
+                '<a class="edit text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="编辑">',
+                '<i class="ti-pencil-alt"></i>',
+                '</a>',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="删除">',
+                '<i class="ti-trash"></i>',
+                '</a>'
+            ].join('');
+        }
 
-    function operateFormatter2(value, row, index) {
-      return [
-        '<a class="view text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="查看">',
-        '<i class="ti-image"></i>',
-        '</a>',
-        '<a class="edit text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="编辑">',
-        '<i class="ti-pencil-alt"></i>',
-        '</a>',
-        '<a class="remove ml10 text-danger" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="删除">',
-        '<i class="ti-trash"></i>',
-        '</a>'
-      ].join('');
-    }
-</script>
+        function operateFormatter2(value, row, index) {
+            return [
+                '<a class="view text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="查看">',
+                '<i class="ti-image"></i>',
+                '</a>',
+                '<a class="edit text-info" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="编辑">',
+                '<i class="ti-pencil-alt"></i>',
+                '</a>',
+                '<a class="remove ml10 text-danger" href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="删除">',
+                '<i class="ti-trash"></i>',
+                '</a>'
+            ].join('');
+        }
+    </script>
 
 </body>
 

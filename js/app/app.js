@@ -1,3 +1,7 @@
+/*****************
+ * 这个文件主要是业务逻辑处理 *
+ *****************/
+
 $(function() {
   /**
    * [routes 控制历史记录]
@@ -8,8 +12,6 @@ $(function() {
     this.currentUrl = '';
   }
   Router.prototype.route = function(path, callback) {
-    // console.log(path);
-    // console.log(callback);
     this.routes[path] = callback || function() {};
   };
   Router.prototype.refresh = function() {

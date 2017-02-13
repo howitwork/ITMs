@@ -14,3 +14,30 @@ tbody td a:last-child {
 .swal2-modal .swal2-content .es-list {
   font-size: 14px;
 }
+
+.settings .nav-header,.settings .tab-header,.messages .nav-header,.messages .tab-header {
+  width: 100%;
+  height: 60px;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: rgba(241, 241, 241, 0.6);
+}
+.settings .nav-header,.messages .nav-header {
+  border-bottom: 1px solid #ddd;
+}
+.settings .tab-header,.settings .tab-header,.messages .tab-header,.messages .tab-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.settings .nav-header .header-title,.settings .tab-header .header-title,.messages .nav-header .header-title,.messages .tab-header .header-title {
+  line-height: 60px;
+}
+.settings .tab-header .header-title,.messages .tab-header .header-title  {
+  font-weight: 200;
+  border-left: 3px solid rgba(76, 176, 249, 0.8);
+  padding-left: 10px;
+  margin-left: 20px;
+}
+.settings .col-xs-10,.messages .col-xs-10 {
+  padding-right: 30px;
+}

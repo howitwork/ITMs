@@ -827,7 +827,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
 .es-list {
   text-align: left;
 }
-.main-panel>.settings {
+.main-panel>.settings,.main-panel>.messages {
   height: calc(100% - 75px);
   border-top: 1px solid #ddd;
   display: none;
@@ -836,11 +836,11 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   height: calc(100% - 75px);
   border-top: 1px solid #ddd;
 }
-.main-panel>.settings .row{
+.main-panel>.settings .row,.main-panel>.messages .row{
   height: 100%;
   margin-left: 0px;
 }
-.main-panel>.settings .row .col-xs-2 {
+.main-panel>.settings .row .col-xs-2,.main-panel>.messages .row .col-xs-2 {
   position: relative;
   left: -2px;
   height: 100%;
@@ -849,23 +849,23 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   padding-left: 0px;
   border-right: 1px solid #ddd;
 }
-.settings .nav-stacked.nav-tabs {
+.settings .nav-stacked.nav-tabs,.messages .nav-stacked.nav-tabs {
   border: 0px none;
 }
-.main-panel>.settings .nav-tabs>li {
+.main-panel>.settings .nav-tabs>li,.main-panel>.messages .nav-tabs>li {
   position: relative;
   left: 1px;
 }
-.main-panel>.settings .nav-tabs>li.active {
+.main-panel>.settings .nav-tabs>li.active,.main-panel>.messages .nav-tabs>li.active {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   border-left: 0px none;
 }
-.settings .nav-stacked.nav-tabs li a {
-  padding-left: 30px;
+.main-panel>.settings .nav-tabs>li.active:first-child,.main-panel>.messages .nav-tabs>li.active:first-child{
+  border-top: 0px solid;
 }
-.main-panel>.settings .nav-tabs>li.active:first-child {
-  border-top: 0px none;
+.settings .nav-stacked.nav-tabs li a,.messages .nav-stacked.nav-tabs li a {
+  padding-left: 30px;
 }
 
 .main.tab-content #error h1{

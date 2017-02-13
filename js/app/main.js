@@ -261,10 +261,31 @@ var branch = {
     $('.navbar-default .navbar-nav>li>a.settings').click(function() {
       $('.main-panel>.content').css('display', 'none');
       $('.main-panel>.index').css('display', 'none');
+      $('.main-panel>.messages').css('display', 'none');
       $('.main-panel>.settings').css('display', 'block');
       if (!$('body').hasClass('sidebar-mini')) {
         $('#minimizeSidebar').trigger('click');
       }
+    });
+    $('.settings .tab-header .header-title').text($('.settings .nav.nav-stacked li.active a').text());
+    $('.settings .nav.nav-stacked li a').click(function() {
+      $('.settings .tab-header .header-title').text($(this).text());
+    });
+    /**
+     * 消息设置页面
+     */
+    $('.navbar-nav>li>.dropdown-menu.per li').click(function() {
+      $('.main-panel>.content').css('display', 'none');
+      $('.main-panel>.index').css('display', 'none');
+      $('.main-panel>.settings').css('display', 'none');
+      $('.main-panel>.messages').css('display', 'block');
+      if (!$('body').hasClass('sidebar-mini')) {
+        $('#minimizeSidebar').trigger('click');
+      }
+      $('.messages .tab-header .header-title').text($('.messages .nav.nav-stacked li.active a').text());
+      $('.messages .nav.nav-stacked li a').click(function() {
+        $('.messages .tab-header .header-title').text($(this).text());
+      });
     });
     //hover 时候出现菜单
     var timer = '';
@@ -375,9 +396,10 @@ var branch = {
           $(this).parent().addClass('active');
           $(this).parent().eq(0).parents('li').addClass('active');
           $('.nav-tabs a[href=' + '#' + $(this).attr('data-menu-id') + ']').trigger('click');
-          $('.main-panel>.content').css('display', 'block');
           $('.main-panel>.settings').css('display', 'none');
           $('.main-panel>.index').css('display', 'none');
+          $('.main-panel>.messages').css('display', 'none');
+          $('.main-panel>.content').css('display', 'block');
         } else {
           $(this).addClass('open');
           $('.navbar .navbar-brand a').text($(this).text());
@@ -388,13 +410,57 @@ var branch = {
           $('.nav.nav-tabs.main').append(tab);
           // $('.nav-tabs.main>li').width((($('.nav-tabs.main').width() - 1) / $('.nav-tabs.main>li').length));
           $('.nav-tabs a[href=' + '#' + $(this).attr('data-menu-id') + ']').trigger('click');
-          $('.main-panel>.content').css('display', 'block');
           $('.main-panel>.settings').css('display', 'none');
           $('.main-panel>.index').css('display', 'none');
+          $('.main-panel>.messages').css('display', 'none');
+          $('.main-panel>.content').css('display', 'block');
         }
       }
     });
 
+    /**
+     * [openNewTab 点击按钮新开一个页面]
+     * @param  {[type]} obj  [点击的目标]
+     * @param  {[type]} id   [需要打开页面的id值]
+     * @param  {[type]} name [标签页的名字]
+     * @param  {[type]} url  [要打开页面的URL]
+     * @return {[type]}      [null]
+     */
+    function openNewTab(obj, id, name, url) {
+      obj.click(function() {
+        //创建标签页
+        var _this = $(this);
+        var tab = $('<li role="presentation"><a href=' + '#' + id + ' role="tab" data-toggle="tab">' + name + '<i class="ti-close"></i></a></li>');
+        $('.nav.nav-tabs.main').append(tab);
+        //获取tab页内容
+        $.get(url, function(data) {
+          $('.main-panel .content .tab-content').prepend(data);
+          $('.main-panel .content .tab-content #' + id).addClass('active');
+        });
+        $('.nav-tabs a[href=' + '#' + id + ']').tab('show');
+        $('.main-panel>.settings').css('display', 'none');
+        $('.main-panel>.index').css('display', 'none');
+        $('.main-panel>.messages').css('display', 'none');
+        $('.main-panel>.content').css('display', 'block');
+      });
+    }
+    openNewTab($('.index .customer a'), 'customer', 'aaa', 'pages/customer.html');
+  // $('.index .customer a').click(function() {
+  //   //创建标签页
+  //   var _this = $(this);
+  //   var tab = $('<li role="presentation"><a href=' + '#' + $(this).attr('data-menu-id') + ' role="tab" data-toggle="tab">' + $(this).text() + '<i class="ti-close"></i></a></li>');
+  //   $('.nav.nav-tabs.main').append(tab);
+  //   //获取tab页内容
+  //   $.get('pages/customer.html', function(data) {
+  //     $('.main-panel .content .tab-content').prepend(data);
+  //     $('.main-panel .content .tab-content #' + _this.attr('data-menu-id')).addClass('active');
+  //   });
+  //   $('.nav-tabs a[href=' + '#' + $(this).attr('data-menu-id') + ']').tab('show');
+  //   $('.main-panel>.settings').css('display', 'none');
+  //   $('.main-panel>.index').css('display', 'none');
+  //   $('.main-panel>.messages').css('display', 'none');
+  //   $('.main-panel>.content').css('display', 'block');
+  // });
   },
 /**页面渲染部分 end ****************************/
 };
