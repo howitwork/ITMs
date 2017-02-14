@@ -38,6 +38,9 @@ $(function() {
   $('.lock').on('click', function() {
     window.location.href = './lock.html';
   });
+  $('.loginOut').on('click', function() {
+    window.location.href = './login.html';
+  });
   $('.sidebar .sidebar-wrapper>.nav li>a:not([data-toggle])').each(function() {
     var url = $(this).attr('href').slice(1);
     var _this = $(this);

@@ -45,7 +45,10 @@ define(['jquery', 'bootstrap', 'bootstrapValidator', 'select', 'moment'],
       }
       window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
       window.history.forward(1);
-      $('.lock .btn-wd').click(function() {
+      $('#login').click(function() {
+        history.go(-3);
+      });
+      $('#unLock').click(function() {
         history.go(-3);
       });
     });
