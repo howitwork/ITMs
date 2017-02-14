@@ -36,7 +36,7 @@ $(function() {
     window.history.replaceState(null, null, '#');
   });
   $('.lock').on('click', function() {
-    window.location.href = '/lock.html';
+    window.location.href = './lock.html';
   });
   $('.sidebar .sidebar-wrapper>.nav li>a:not([data-toggle])').each(function() {
     var url = $(this).attr('href').slice(1);
