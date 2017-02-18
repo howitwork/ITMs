@@ -34,7 +34,10 @@ var branch = {
   },
   //提示
   initTooltip: function() {
-    $('[data-toggle=tooltip]').tooltip();
+    $('[data-toggle=tooltip]').tooltip({
+      trigger: 'hover'
+    });
+    return false;
   },
   //弹窗
   initPopover: function() {

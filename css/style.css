@@ -145,7 +145,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, a, .td
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 4;
-    box-shadow: inset -1px 0px 0px 0px #cfcfca;
+    box-shadow: inset -1px -1px 0px 0px #cfcfca;
 }
 
 .sidebar.mini .sidebar-wrapper {
@@ -841,8 +841,6 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   margin-left: 0px;
 }
 .main-panel>.settings .row .col-xs-2,.main-panel>.messages .row .col-xs-2 {
-  position: relative;
-  left: -2px;
   height: 100%;
   background-color: rgba(241, 241, 241, 0.5);
   padding-right: 0px;
@@ -850,6 +848,8 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   border-right: 1px solid #ddd;
 }
 .settings .nav-stacked.nav-tabs,.messages .nav-stacked.nav-tabs {
+  position: relative;
+  left: -2px;
   border: 0px none;
 }
 .main-panel>.settings .nav-tabs>li,.main-panel>.messages .nav-tabs>li {
