@@ -848,8 +848,6 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret {
   border-right: 1px solid #ddd;
 }
 .settings .nav-stacked.nav-tabs,.messages .nav-stacked.nav-tabs {
-  position: relative;
-  left: -2px;
   border: 0px none;
 }
 .main-panel>.settings .nav-tabs>li,.main-panel>.messages .nav-tabs>li {
