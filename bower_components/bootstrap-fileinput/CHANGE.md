@@ -1,6 +1,78 @@
 Change Log: `bootstrap-fileinput`
 =================================
 
+## version 4.3.9
+
+**Date:** 02-Apr-2017
+
+1. (enh #863): New plugin method `zoom` with parameter `frameId` to allow custom triggering of zoomed preview for each thumbnail frame.
+2. (enh #881): Update Spanish Translations.
+3. (bug #882): Correct image resize validation.
+4. (enh #875): Reset form based events more correctly to allow multiple bootstrap file inputs within forms.
+5. (bug #885): Correct validation for `allowedFileTypes`. 
+6. (enh #886): Append zoom modal dialog to `body` element if available to avoid multiple BS modals conflict. 
+7. Enhance events like `fileclear` and `filepreajax` to be aborted via `event.preventDefault()`.
+8. (enh #887): New properties `msgUploadBegin` and `msgUploadEnd` to display a better progress status. The `layoutTemplates.progress` will support a new token `{status}`.
+9. Enhance uploaded thumb frames to not reset or change the frame identifier after successful upload.
+10. (bug #890): Fix doubling of images for async bulk uploads when initial preview is returned via ajax response.
+11. (bug #893): Correct `file-success-remove` event handling.
+12. (enh #894, #895): Correct file size validation for empty files.
+13. (enh #898): New plugin method to get files in preview and config.
+14. (bug #900): Correct `overwriteInitial` validation for async batch uploads returning dynamic initial preview post upload.
+15. (enh #902): Enhance zoom preview styling for large height images.
+16. (enh #905): Prevent duplicate files to be dragged and dropped.
+17. (enh #906): Add Swedish Translations.
+18. (enh #909): Update German Translations.
+19. More correct validation of `allowedFileTypes` to accept null values.
+20. Enhance zoom preview styling for Krajee Explorer theme.
+21. (enh #913): Better id parsing and resetting of uploaded file thumbnails.
+22. (enh #914): Update Portuguese BR translations.
+
+## version 4.3.8
+
+**Date:** 21-Feb-2017
+
+1. (bug #870): Correct config.width parsing.
+2. (bug #872): Correct typo in `bootstrap.min.css`.
+3. (enh #874): Enhance/Standardize CSS Styles for Krajee Default Theme.
+4. (enh #876): Update Spanish Translations.
+5. (enh #879): Update Russian Translations.
+
+## version 4.3.7
+
+**Date:** 11-Feb-2017
+
+1. (enh #812): Update Greek Translations.
+2. (enh #815): Enhance parsing of thumbnails that are visible in preview (will allow plugin to be 
+    initialized in hidden containers like tabs).
+3. (enh #816): New property `msgFileTypes` to control descriptions/localizations of file types displayed.
+4. (bug #819): Correct init preview auto replace post `uploadSingle` action in thumbnails.
+5. (enh #820): Prevent resize if image is smaller than allowed dimensions.
+6. (enh #822): Enhancement for preventing upload when data is empty. New property `msgUploadEmpty` has been incorporated.
+7. (enh #823): Correct file indices assignment during validation of images.
+8. (enh #824): Add Korean Translations.
+9. (bug #825): Correct `fileimagesresized` event triggering.
+10. (bug #826): Extend language configuration to consider defaults.
+11. (enh #828): Allow drag sort of single uploaded thumbnails with `initialPreview` config set (post upload).
+12. (enh #831): Update Finnish Translations.
+13. (bug #833): Correct validation and defaults init for `allowedPreviewTypes`.
+14. (bug #834): Correct clearing of file preview including zoom cache.
+15. (enh #835): Update Polish Translations.
+16. (enh #837): Update Czech Translations.
+17. (bug #839): Correct `initialPreview` generation and sortable behavior for async uploads.
+18. (enh #844): Display zoom preview navigation buttons only when multiple files exist.
+19. (enh #662, #725): Enhance preview modal to be appended to body before each zoom action (if `body` tag exists). 
+20. (enh #847): Update German Translations. 
+21. (enh #851): Create Kazakh Translations. 
+22. (bug #852): Ensure `frameClass` setting in `initialPreviewConfig` is considered. 
+23. (enh #854): Better file size calculation and display.
+24. (enh #857): Default error handling for unknown ajax errors.
+25. (enh #858): Thumb Frame CSS class as configurable property.
+26. (enh #859): Enhance and revamp preview caching.
+27. (enh #860): Initialize template defaults in a better manner.
+28. (enh #861): New properties within `layoutTemplates`.
+29. (enh #862): Launch a brand new Krajee theme: `explorer`.
+
 ## version 4.3.6
 
 **Date:** 17-Dec-2016

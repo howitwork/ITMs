@@ -24,8 +24,10 @@
     <link rel="stylesheet" href="./css/components/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/components/editableSelect/jquery-editable-select.min.css">
     <link rel="stylesheet" href="./css/components/bootstrapFileinput/css/fileinput.min.css">
+    <link rel="stylesheet" href="./css/components/bootstrapFileinput/themes/explorer/theme.css">
     <link rel="stylesheet" href="./css/components/cropper/cropper.min.css">
     <link rel="stylesheet" href="./bower_components/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="./css/components/treeview/bootstrap-treeview.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/customer.css">
     <link rel="stylesheet" href="./css/caseManagement.css">
@@ -367,6 +369,8 @@
                             </div>
                             <div role="tabpanel" class="tab-pane" id="settings">
                                 <h1 class="page-header">系统设置</h1>
+
+                                <div id="tree"></div>
                             </div>
                         </div>
                     </div>
@@ -420,6 +424,10 @@
                                                 <h1>404</h1>
                                                 <span>对不起,该页面不存在</span>
                                             </div>
+                                            <div id="success" class="tab-pane" role="tabpanel">
+                                                <h1>交易成功</h1>
+                                                <span>恭喜，交易成功！</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -446,6 +454,9 @@
     <script src="./js/components/bootstrapFileinput/js/plugins/sortable.min.js"></script>
     <script src="./js/components/bootstrapFileinput/js/plugins/purify.min.js"></script>
     <script src="./js/components/bootstrapFileinput/js/fileinput.min.js"></script>
+    <script src="./js/components/bootstrapFileinput/themes/explorer/theme.js"></script>
+    <script src="./js/components/bootstrapFileinput/themes/fa/theme.js"></script>
+    <script src="./js/components/bootstrapFileinput/js/locales/zh.js"></script>
     <script src="./js/components/bootstrap/bootstrap.min.js"></script>
     <script src="./js/components/bootstrapFileinput/themes/fa/theme.js"></script>
     <script src="./js/components/bootstrapFileinput/js/locales/zh.js"></script>
@@ -471,12 +482,14 @@
     <script src="./js/components/editableSelect/jquery-editable-select.min.js"></script>
     <script src="./js/components/cropper/cropper.min.js"></script>
     <script src="./bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="./js/components/treeview/bootstrap-treeview.min.js"></script>
     <!-- <script src="./js/app/caseManagement.js"></script> -->
     <script src="./js/app/main.js"></script>
     <script src="./js/app/app.js"></script>
     <script src="./js/app/settings.js"></script>
     <script src="./js/app/index.js"></script>
     <!-- endbuild -->
+    <script src="http://127.0.0.1:35729/livereload.js?snipver=1" type="text/javascript"></script>
     <script type="text/javascript">
         $().ready(function() {
             branch.init();
