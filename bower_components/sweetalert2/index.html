@@ -2,49 +2,60 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-  <title>SweetAlert2 - supported fork of t4t5/sweetalert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+  <title>SweetAlert2 - a beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes</title>
 
   <link rel="icon" href="./assets/favicon.png">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
 
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette">
   <link rel="stylesheet" href="./assets/example.css">
   <link rel="stylesheet" href="./assets/buttons.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/animatecss/3.5.2/animate.css">
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- This is what you need -->
-  <script src="https://cdn.jsdelivr.net/es6-promise/latest/es6-promise.auto.min.js"></script> <!-- IE support -->
-  <script src="./dist/sweetalert2.js"></script>
+  <script src="./dist/sweetalert2.min.js"></script>
   <link rel="stylesheet" href="./dist/sweetalert2.min.css">
+
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!--.......................-->
 </head>
 
 <body>
   <header>
     <h1>Sweet<span>Alert</span>2</h1>
-    <h2>A beautiful and customizable replacement for JavaScript's popup boxes</h2>
     <h2>Supported fork of t4t5/sweetalert</h2>
+    <br>
+    <h2>A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes</h2>
+    <h2>Zero dependencies</h2>
     <div class="carbonads-wrapper">
       <script src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=limontegithubiosweetalert2" id="_carbonads_js" async></script>
     </div>
     <a class="top-right-button download">Download</a>
-    <a href="http://www.jsdelivr.com/projects/sweetalert2" class="top-right-button cdn">CDN</a>
-    <!--form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="donate-form">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="8BZF2KUURZ42J">
-      <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form-->
+    <a href="https://cdnjs.com/libraries/limonte-sweetalert2" class="top-right-button cdn" target="_blank" rel="noopener">CDN</a>
+    <div class="top-right-button donate">
+      <img src="https://www.paypalobjects.com/webstatic/icon/pp32.png" width="32" height="32" alt="PayPal logo">
+      <span>Donate</span>
+      <ul class="currencies hidden">
+        <li><a href="https://www.paypal.me/limonte/5usd">in US Dollars</a></li>
+        <li><a href="https://www.paypal.me/limonte/5eur">in Euros</a></li>
+        <li><a href="https://www.paypal.me/limonte/10">in other currencies</a></li>
+      </ul>
+    </div>
   </header>
 
   <p>Here’s a comparison of a standard error message. The first one uses the built-in <strong>alert</strong>-function, while the second is using <strong>SweetAlert2</strong>.</p>
 
   <div class="showcase normal">
     <h4>Normal alert</h4>
-    <button>Show error message</button>
+    <button aria-label="Show error message - normal alert">Show error message</button>
 
     <pre><span class="func">alert</span>(<span class="str">'Oops! Something went wrong!'</span>)</pre>
 
@@ -53,7 +64,7 @@
 
   <div class="showcase sweet">
     <h4>Sweet<span>Alert</span>2</h4>
-    <button>Show error message</button>
+    <button aria-label="Show error message - SweetAlert2">Show error message</button>
 
     <pre>
 swal(
@@ -74,7 +85,7 @@ swal(
     <li class="message">
       <div class="ui">
         <p>A basic message</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A basic message">Try me!</button>
       </div>
       <pre>swal(<span class="str">'Any fool can use a computer'</span>)</pre>
     </li>
@@ -82,7 +93,7 @@ swal(
     <li class="title-text">
       <div class="ui">
         <p>A title with a text under</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A title with a text under">Try me!</button>
       </div>
       <pre>
 swal(
@@ -95,7 +106,7 @@ swal(
     <li class="success">
       <div class="ui">
         <p>A success message!</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A success message!">Try me!</button>
       </div>
       <pre>
 swal(
@@ -108,7 +119,7 @@ swal(
     <li class="timer">
       <div class="ui">
         <p>A message with auto close timer</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A message with auto close timer">Try me!</button>
       </div>
       <pre>
 swal({
@@ -129,7 +140,7 @@ swal({
     <li class="html">
       <div class="ui">
         <p>Custom HTML description and buttons</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: Custom HTML description and buttons">Try me!</button>
       </div>
       <pre>
 swal({
@@ -150,8 +161,8 @@ swal({
 
     <li class="html-jquery">
       <div class="ui">
-        <p>jQuery HTML with custom animation (<a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css <i class="fa fa-external-link"></i></a>)</p>
-        <button>Try me!</button>
+        <p>jQuery HTML with custom animation (<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">Animate.css <i class="fa fa-external-link"></i></a>)</p>
+        <button aria-label="Try me! Example: jQuery HTML with custom animation">Try me!</button>
       </div>
       <pre>
 swal({
@@ -167,7 +178,7 @@ swal({
     <li class="warning confirm">
       <div class="ui">
         <p>A warning message, with a function attached to the "Confirm"-button...</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A warning message, with a function attached to the 'Confirm'-button">Try me!</button>
       </div>
       <pre>
 swal({
@@ -190,7 +201,7 @@ swal({
     <li class="warning cancel" id="dismiss-handle">
       <div class="ui">
         <p>... and by passing a parameter, you can execute something else for "Cancel".</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: passing a parameter, you can execute something else for 'Cancel'">Try me!</button>
       </div>
       <pre>
 swal({
@@ -227,7 +238,7 @@ swal({
     <li class="custom-image">
       <div class="ui">
         <p>A message with a custom image and CSS animation disabled</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A message with a custom image and CSS animation disabled">Try me!</button>
       </div>
       <pre>
 swal({
@@ -243,7 +254,7 @@ swal({
     <li class="custom-width-padding-background">
       <div class="ui">
         <p>A message with custom width, padding and background</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: A message with custom width, padding and background">Try me!</button>
       </div>
       <pre>
 swal({
@@ -257,7 +268,7 @@ swal({
     <li class="ajax-request" id="ajax-request">
       <div class="ui">
         <p>Ajax request example</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: Ajax request">Try me!</button>
       </div>
       <pre>
 swal({
@@ -290,7 +301,7 @@ swal({
     <li class="chaining-modals" id="chaining-modals">
       <div class="ui">
         <p>Chaining modals (queue) example</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: Chaining modals (queue)">Try me!</button>
       </div>
       <pre>
 swal.setDefaults({
@@ -329,7 +340,7 @@ swal.queue(steps).then(<span class="func"><i>function</i></span> (result) {
     <li class="dynamic-queue" id="dynamic-queue">
       <div class="ui">
         <p>Dynamic queue example</p>
-        <button>Try me!</button>
+        <button aria-label="Try me! Example: Dynamic queue">Try me!</button>
       </div>
       <pre>
 swal.queue([{
@@ -354,47 +365,41 @@ swal.queue([{
 
 
   <!-- Download & Install -->
-  <h3 class="download-section">Download & install</h3>
-
-  <div class="center-container">
-    <pre class="center">$ bower install sweetalert2</pre>
-    <p>Or</p>
+  <div class="center-container download-section">
+    <h3>Download & install</h3>
     <pre class="center">$ npm install sweetalert2</pre>
+    <p>Or</p>
+    <pre class="center">$ bower install sweetalert2</pre>
     <p>
       Or download from CDN:
-      <a href="https://www.jsdelivr.com/projects/sweetalert2" target="_blank">jsdelivr.com/sweetalert2 <i class="fa fa-external-link"></i></a>
-      <span class="mobile-hidden"> | </span>
-      <a href="https://cdnjs.com/libraries/limonte-sweetalert2" target="_blank">cdnjs.com/limonte-sweetalert2 <i class="fa fa-external-link"></i></a>
+      <a href="https://cdnjs.com/libraries/limonte-sweetalert2" target="_blank" rel="noopener">cdnjs.com/limonte-sweetalert2 <i class="fa fa-external-link"></i></a>
     </p>
   </div>
 
-  <ol>
-    <li>
-      <p>Initialize the plugin by referencing the necessary files:</p>
-<pre><span class="comment">&lt;!-- for IE support --&gt;</span>
-&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/es6-promise/es6-promise.auto.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt
 
-&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt
-&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">href</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.css"</span>&gt;</pre>
+  <div class="center-container">
+    <h3>Usage</h3>
+    <p>1. Initialize the plugin by referencing the necessary files:</p>
+<pre>&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;
+&lt;<span class="tag">link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="tag">href</span>=<span class="str">"bower_components/sweetalert2/dist/sweetalert2.min.css"</span>&gt;
+
+<span class="comment">&lt;!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser --&gt;</span>
+&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="str">"https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</pre>
       <p>Or</p>
-<pre><span class="comment">// ES6 Modules</span>
-<span class="val">import</span> { default as swal } <span class="val">from</span> <span class="str">'sweetalert2'</span>
+<pre><span class="comment">// ES6 Modules or TypeScript</span>
+<span class="val">import</span> swal <span class="val">from</span> <span class="str">'sweetalert2'</span>
 
 <span class="comment">// CommonJS</span>
 <span class="val">const</span> swal = <span class="func">require</span>(<span class="str">'sweetalert2'</span>)</pre>
-    </li>
 
-    <li>
-      <p>Call the sweetAlert2-function after the page has loaded</p>
-      <pre>
-swal({
+    <p>2. Call the sweetAlert2-function after the page has loaded</p>
+<pre>swal({
   title: <span class="str">'Error!'</span>,
   text: <span class="str">'Do you want to continue'</span>,
   type: <span class="str">'error'</span>,
   confirmButtonText: <span class="str">'Cool'</span>
 })</pre>
-    </li>
-  </ol>
+  </div>
 
 
   <div class="mobile-hidden">
@@ -416,7 +421,12 @@ swal({
       <tr>
         <td><b>title</b></td>
         <td><i>null</i></td>
-        <td>The title of the modal. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
+        <td>The title of the modal, as HTML. It can either be added to the object under the key "title" or passed as the first parameter of the function.</td>
+      </tr>
+      <tr>
+        <td><b>titleText</b></td>
+        <td><i>null</i></td>
+        <td>The title of the modal, as text. Useful to avoid HTML injection.</td>
       </tr>
       <tr>
         <td><b>text</b></td>
@@ -433,6 +443,11 @@ swal({
         <td><i>null</i></td>
         <td>The type of the modal. SweetAlert2 comes with 5 built-in types which will show a corresponding icon animation: <strong>warning</strong>, <strong>error</strong>, <strong>success</strong>, <strong>info</strong> and <strong>question</strong>. It can either be put in the array under the key "type" or passed as the third parameter of the function.</td>
       </tr>
+      <tr>
+        <td><b>target</b></td>
+        <td><i>'body'</i></td>
+        <td>The container element for adding modal into.</td>
+      </tr>
       <tr id="input-parameter">
         <td><b>input</b></td>
         <td><i>null</i></td>
@@ -441,7 +456,7 @@ swal({
           <strong>text</strong>, <strong>email</strong>, <strong>password</strong>,
           <strong>number</strong>, <strong>tel</strong>, <strong>range</strong>,
           <strong>textarea</strong>, <strong>select</strong>, <strong>radio</strong>,
-          <strong>checkbox</strong> and <strong>file</strong>.
+          <strong>checkbox</strong>, <strong>file</strong> and <strong>url</strong>.
         </td>
       </tr>
       <tr>
@@ -483,6 +498,11 @@ swal({
         <td><b>allowEscapeKey</b></td>
         <td><i>true</i></td>
         <td>If set to <strong>false</strong>, the user can't dismiss the modal by pressing the Escape key.</td>
+      </tr>
+      <tr id="allow-enter-key">
+        <td><b>allowEnterKey</b></td>
+        <td><i>true</i></td>
+        <td>If set to <strong>false</strong>, the user can't confirm the modal by pressing the Enter or Space keys, unless they manually focus the confirm button.</td>
       </tr>
       <tr>
         <td><b>showConfirmButton</b></td>
@@ -532,7 +552,7 @@ swal({
       <tr>
         <td><b>reverseButtons</b></td>
         <td><i>false</i></td>
-        <td>Set to <strong>true</strong> if you want to invert default buttons positions.</td>
+        <td>Set to <strong>true</strong> if you want to invert default buttons positions ("Confirm"-button on the right side).</td>
       </tr>
       <tr>
         <td><b>focusCancel</b></td>
@@ -554,7 +574,7 @@ swal({
         <td><i>null</i></td>
         <td>Function to execute before confirm, should return Promise, see <a href="#ajax-request">usage example</a>.</td>
       </tr>
-      <tr>
+      <tr id="image">
         <td><b>imageUrl</b></td>
         <td><i>null</i></td>
         <td>Add a customized icon for the modal. Should contain a string with the path or URL to the image.</td>
@@ -594,6 +614,11 @@ swal({
         <td><i>true</i></td>
         <td>Automatically remove whitespaces from both ends of a result string. Set this parameter to <strong>false</strong> to disable auto-trimming.</td>
       </tr>
+      <tr id="input-attributes">
+        <td><b>inputAttributes</b></td>
+        <td><i>{}</i></td>
+        <td>HTML input attributes (e.g. <strong>min</strong>, <strong>max</strong>, <strong>autocomplete</strong>, <strong>accept</strong>), that are added to the input field. Object keys will represent attributes names, object values will represent attributes values.</td>
+      </tr>
       <tr id="input-validator">
         <td><b>inputValidator</b></td>
         <td><i>null</i></td>
@@ -628,6 +653,11 @@ swal({
         <td><b>onClose</b></td>
         <td><i>null</i></td>
         <td>Function to run when modal closes, provides modal DOM element as the first argument.</td>
+      </tr>
+      <tr>
+        <td><b>useRejections</b></td>
+        <td><i>true</i></td>
+        <td>Determines whether dismissals (outside click, cancel button, close button, esc key) should reject, or resolve with an object of the format <i>{ dismiss: reason }</i>. Set it to <i>false</i> to get a cleaner control flow when using <i>await</i>, as explained in <a href="https://github.com/limonte/sweetalert2/issues/485">#485</a>.</td>
       </tr>
     </table>
 
@@ -683,7 +713,7 @@ swal({
     </p>
 
     <pre>
-swal('...')
+swal(...)
   .catch(swal.noop)</pre>
   </div>
 
@@ -692,28 +722,39 @@ swal('...')
   <table class="modal-types">
     <tr>
       <td><strong>success</strong></td>
-      <td><div class="swal2-icon swal2-success"> <span class="line tip animate-success-tip"></span> <span class="line long animate-success-long"></span> <div class="placeholder"></div></div></td>
-      <td><button class="type-success">Try me!</button></td>
+      <td>
+        <div class="swal2-icon swal2-success">
+          <div class="swal2-success-circular-line-left"></div>
+          <span class="swal2-success-line-tip"></span> <span class="swal2-success-line-long"></span>
+          <div class="swal2-success-ring"></div> <div class="swal2-success-fix"></div>
+          <div class="swal2-success-circular-line-right"></div>
+        </div>
+      </td>
+      <td><button class="type-success" aria-label="Try me! Example: success modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>error</strong></td>
-      <td><div class="swal2-icon swal2-error"><span class="x-mark"><span class="line left"></span><span class="line right"></span></span></div></td>
-      <td><button class="type-error">Try me!</button></td>
+      <td>
+        <div class="swal2-icon swal2-error">
+         <span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span>
+        </div>
+      </td>
+      <td><button class="type-error" aria-label="Try me! Example: error modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>warning</strong></td>
       <td><div class="swal2-icon swal2-warning">!</div></td>
-      <td><button class="type-warning">Try me!</button></td>
+      <td><button class="type-warning" aria-label="Try me! Example: warning modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>info</strong></td>
       <td><div class="swal2-icon swal2-info">i</div></td>
-      <td><button class="type-info">Try me!</button></td>
+      <td><button class="type-info" aria-label="Try me! Example: info modal">Try me!</button></td>
     </tr>
     <tr>
       <td><strong>question</strong></td>
       <td><div class="swal2-icon swal2-question">?</div></td>
-      <td><button class="type-question">Try me!</button></td>
+      <td><button class="type-question" aria-label="Try me! Example: question modal">Try me!</button></td>
     </tr>
   </table>
 
@@ -721,7 +762,7 @@ swal('...')
   <!-- Input Types -->
   <h3>Input Types</h3>
   <table class="modal-input-types">
-    <tr id="input-field">
+    <tr id="input-text">
       <td><strong>text</strong></td>
       <td>
         <pre>
@@ -745,7 +786,7 @@ swal({
   })
 })</pre>
       </td>
-      <td><button class="input-type-text">Try me!</button></td>
+      <td><button class="input-type-text" aria-label="Try me! Example: input type text">Try me!</button></td>
     </tr>
 
     <tr id="input-email">
@@ -762,7 +803,24 @@ swal({
   })
 })</pre>
       </td>
-      <td><button class="input-type-email">Try me!</button></td>
+      <td><button class="input-type-email" aria-label="Try me! Example: input type email">Try me!</button></td>
+    </tr>
+
+    <tr id="input-url">
+      <td><strong>url</strong></td>
+      <td>
+        <pre>
+swal({
+  title: <span class="str">'Input URL'</span>,
+  input: <span class="str">'url'</span>
+}).then(<span class="func"><i>function</i></span> (url) {
+  swal({
+    type: <span class="str">'success'</span>,
+    html: <span class="str">'Entered URL: '</span> + url
+  })
+})</pre>
+      </td>
+      <td><button class="input-type-url">Try me!</button></td>
     </tr>
 
     <tr id="input-password">
@@ -786,7 +844,7 @@ swal({
   }
 })</pre>
       </td>
-      <td><button class="input-type-password">Try me!</button></td>
+      <td><button class="input-type-password" aria-label="Try me! Example: input type password">Try me!</button></td>
     </tr>
 
     <tr id="input-textarea">
@@ -802,10 +860,10 @@ swal({
   }
 })</pre>
       </td>
-      <td><button class="input-type-textarea">Try me!</button></td>
+      <td><button class="input-type-textarea" aria-label="Try me! Example: input type textarea">Try me!</button></td>
     </tr>
 
-    <tr id="select-box">
+    <tr id="input-select">
       <td><strong>select</strong></td>
       <td>
         <pre>
@@ -836,10 +894,10 @@ swal({
 })</pre>
 
       </td>
-      <td><button class="input-type-select">Try me!</button></td>
+      <td><button class="input-type-select" aria-label="Try me! Example: input type select">Try me!</button></td>
     </tr>
 
-    <tr id="radio-inputs">
+    <tr id="input-radio">
       <td><strong>radio</strong></td>
       <td>
         <pre>
@@ -874,10 +932,10 @@ swal({
   })
 })</pre>
       </td>
-      <td><button class="input-type-radio">Try me!</button></td>
+      <td><button class="input-type-radio" aria-label="Try me! Example: input type radio">Try me!</button></td>
     </tr>
 
-    <tr id="checkbox">
+    <tr id="input-checkbox">
       <td><strong>checkbox</strong></td>
       <td>
         <pre>
@@ -906,7 +964,7 @@ swal({
 })</pre>
 
       </td>
-      <td><button class="input-type-checkbox">Try me!</button></td>
+      <td><button class="input-type-checkbox" aria-label="Try me! Example: input type checkbox">Try me!</button></td>
     </tr>
 
     <tr id="input-file">
@@ -929,7 +987,7 @@ swal({
   reader.readAsDataURL(file)
 })</pre>
       </td>
-      <td><button class="input-type-file">Try me!</button></td>
+      <td><button class="input-type-file" aria-label="Try me! Example: input type file">Try me!</button></td>
     </tr>
 
     <tr id="input-range">
@@ -948,7 +1006,7 @@ swal({
   inputValue: <span class="val">25</span>
 })</pre>
       </td>
-      <td><button class="input-type-range">Try me!</button></td>
+      <td><button class="input-type-range" aria-label="Try me! Example: input type range">Try me!</button></td>
     </tr>
   </table>
 
@@ -965,7 +1023,7 @@ swal({
 swal({
   title: <span class="str">'Multiple inputs'</span>,
   html:
-    <span class="str">'&lt;input id="swal-input1" class="swal2-input" autofocus&gt;'</span> +
+    <span class="str">'&lt;input id="swal-input1" class="swal2-input"&gt;'</span> +
     <span class="str">'&lt;input id="swal-input2" class="swal2-input"&gt;'</span>,
   preConfirm: <span class="func"><i>function</i></span> () {
     <span class="tag">return new</span> <span class="func">Promise</span>(<span class="func"><i>function</i></span> (resolve) {
@@ -974,13 +1032,16 @@ swal({
         $(<span class="str">'#swal-input2'</span>).val()
       ])
     })
+  },
+  onOpen: <span class="func"><i>function</i></span> () {
+    $(<span class="str">'#swal-input1'</span>).focus()
   }
 }).then(<span class="func"><i>function</i></span> (result) {
   swal(JSON.stringify(result))
 }).catch(swal.noop)</pre>
 
         </td>
-        <td><button class="input-type-multiple">Try me!</button></td>
+        <td><button class="input-type-multiple" aria-label="Try me! Example: multiple inputs">Try me!</button></td>
       </tr>
 
     </table>
@@ -1016,6 +1077,26 @@ swal({
       <tr>
         <td><i>swal.enableButtons()</i></td>
         <td>Enable "Confirm" and "Cancel" buttons.</td>
+      </tr>
+      <tr>
+        <td><i>swal.getTitle()</i></td>
+        <td>Get the modal title.</td>
+      </tr>
+      <tr>
+        <td><i>swal.getContent()</i></td>
+        <td>Get the modal content.</td>
+      </tr>
+      <tr>
+        <td><i>swal.getImage()</i></td>
+        <td>Get the <a href="#image">image</a>.</td>
+      </tr>
+      <tr>
+        <td><i>swal.getConfirmButton()</i></td>
+        <td>Get the "Confirm" button.</td>
+      </tr>
+      <tr>
+        <td><i>swal.getCancelButton()</i></td>
+        <td>Get the "Cancel" button.</td>
       </tr>
       <tr>
         <td><i>swal.disableButtons()</i></td>
@@ -1054,12 +1135,16 @@ swal({
         <td>Hide validation error message.</td>
       </tr>
       <tr>
-        <td><i>swal.enableInput()</i></td>
-        <td>Enable input, this method works with <a href="#input-parameter">input parameter</a>.</td>
+        <td><i>swal.getInput()</i></td>
+        <td>Get the input DOM node, this method works with <a href="#input-parameter">input parameter</a>.</td>
       </tr>
       <tr>
         <td><i>swal.disableInput()</i></td>
-        <td>Disable input.</td>
+        <td>Disable input. A disabled input element is unusable and un-clickable.</td>
+      </tr>
+      <tr>
+        <td><i>swal.enableInput()</i></td>
+        <td>Enable input.</td>
       </tr>
       <tr>
         <td><i>swal.queue([Array])</i></td>
@@ -1117,6 +1202,14 @@ swal({
 
   $('.showcase.sweet button').on('click', function () {
     swal('Oops...', 'Something went wrong!', 'error').catch(swal.noop)
+  })
+
+  $('.donate').on('click', function () {
+    $('.currencies').toggleClass('hidden');
+  })
+
+  $('.currencies').on('click', function (e) {
+    e.stopPropagation()
   })
 
   $('.examples .message button').on('click', function () {
@@ -1262,6 +1355,18 @@ swal({
     }).catch(swal.noop)
   })
 
+  $('.input-type-url').on('click', function () {
+    swal({
+      title: 'Input URL',
+      input: 'url'
+    }).then(function (url) {
+      swal({
+        type: 'success',
+        html: 'Entered URL: <strong>' + url + '</strong>'
+      })
+    }).catch(swal.noop)
+  })
+
   $('.input-type-password').on('click', function () {
     swal({
       title: 'Enter your password',
@@ -1372,7 +1477,7 @@ swal({
     }).then(function () {
       swal({
         type: 'success',
-        text: 'You agreed with T&amp;C :)'
+        text: 'You agreed with T&C :)'
       })
     }).catch(swal.noop)
   })
@@ -1412,7 +1517,7 @@ swal({
   $('.input-type-multiple').on('click', function () {
     swal({
       title: 'Multiple inputs',
-      html: '<input id="swal-input1" class="swal2-input" autofocus><input id="swal-input2" class="swal2-input">',
+      html: '<input id="swal-input1" class="swal2-input"><input id="swal-input2" class="swal2-input">',
       preConfirm: function () {
         return new Promise(function (resolve) {
           resolve([
@@ -1420,6 +1525,9 @@ swal({
             $('#swal-input2').val()
           ])
         })
+      },
+      onOpen: function () {
+        $('#swal-input1').focus();
       }
     }).then(function (result) {
       swal(JSON.stringify(result))
